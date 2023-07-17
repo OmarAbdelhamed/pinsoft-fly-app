@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux";
+import { increment } from "./app/flyDataSlice";
 
 function App() {
+  const state = useSelector((state) => state.data.value);
+  const dispatch = useDispatch();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      <p>{state}</p>
+      <button onClick={() => dispatch(increment())}>increment</button>
     </div>
   );
 }
