@@ -2,7 +2,7 @@ import React from "react";
 
 const FlyInformation = () => {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className="items-center justify-center ">
       <div className="border border-black p-10 relative">
         <h2 className="text-4xl mb-4">Uçuş Bilgileri</h2>
         <div className="absolute top-0 right-0">
