@@ -2,6 +2,7 @@ import React from "react";
 import PriceDetail from "../components/FlyingDetailScreen/PriceDetail";
 import PassengerDetail from "../components/FlyingDetailScreen/PassengerDetail";
 import ContactDetail from "../components/FlyingDetailScreen/ContactDetail";
+import BillDetail from "../components/FlyingDetailScreen/BillDetail";
 
 const FlyingDetailScreen = () => {
   return (
@@ -9,6 +10,7 @@ const FlyingDetailScreen = () => {
       <PriceDetail />
       <PassengerDetail />
       <ContactDetail />
+      <BillDetail />
     </div>
   );
 };
