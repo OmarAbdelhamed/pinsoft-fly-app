@@ -2,7 +2,7 @@ import React from 'react'
 
 function TicketInformation() {
   return (
-    <div className="fly-content divide-x divide-slate-100  flex w-6/7 flex-row justify-between mt-3">
+    <div className="fly-content divide-x divide-slate-100  flex  flex-row justify-between mt-3">
     <div className="airline-brand ">
         <span className='font-bold'> Havayolu</span>
         <div className="brand flex items-center mt-2">
