@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import FlyList from "../components/FlyListScreen/FlyList";
-import { flights } from "../data/departureLegs";
 import axios from "axios";
 
 
@@ -21,6 +20,7 @@ export default function FlyListScreen() {
         return (
           <FlyList
             key={i}
+            airline={leg.airline}
             flightNo={leg.flightNo}
             depTime={leg.depTime}
             arrTime={leg.arrTime}
@@ -33,6 +33,7 @@ export default function FlyListScreen() {
         return (
           <FlyList
             key={i}
+            airline={leg.airline}
             flightNo={leg.flightNo}
             depTime={leg.depTime}
             arrTime={leg.arrTime}

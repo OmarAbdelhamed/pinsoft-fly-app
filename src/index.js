@@ -8,11 +8,13 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import FlyListScreen from "./screens/FlyListScreen";
 import Navbar from "./components/UI/Navbar";
+import HomeScreen from './screens/HomeScreen';
+import Header from './screens/Header';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <HomeScreen />,
   },
   {
     path: "/flylist",
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <Navbar />
+    <Header />
       <RouterProvider router={router} />
   </Provider>
 );

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import Header from './Header';
+import FlyList from '../components/FlyListScreen/FlyList';
+import FlyListScreen from './FlyListScreen';
 
 const HomeScreen = () => {
   const [ticketType, setTicketType] = useState('');
+  const [isSearch , setIsSearch] = useState(false)
 
   const ticketTypeHandler = (e) => {
     setTicketType(e.target.value);
   };
 
   return (
-    <div>
-      <Header />
+    <div className='px-[200px]'>
       <h5 className=' text-center text-2xl pt-2 '> FLYBilet</h5>
       <h1 className=' text-center text-4xl p-4'>
         {' '}
@@ -79,12 +80,14 @@ const HomeScreen = () => {
           />
 
           <button
-            type='submit'
+            type='button'
             className='bg-gray-900 text-white p-2 rounded-md'
+            onClick={()=>setIsSearch(true)}
           >
             Search
           </button>
         </form>
+        {isSearch && <FlyListScreen />}
         <footer class='bg-gray-100 p-2 text-center'>
           <p>&copy; 2023 flyBilet Website. All rights reserved.</p>
         </footer>

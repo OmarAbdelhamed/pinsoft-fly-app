@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className='flex justify-between bg-gray-100 py-[20px] px-[50px] shadow-md shadow-gray-400'>
+    <header className=' flex justify-between bg-gray-100 py-[20px] px-[50px] shadow-md shadow-gray-400'>
       <a href='/' className='li'>logo</a>
       <nav>
         <ul className='flex justify-between'>
