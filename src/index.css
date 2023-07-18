@@ -4,5 +4,12 @@
 
 body {
   margin: 0;
+  padding: 0 200px;
 }
 
+.input {
+  @apply border border-gray-300 rounded-md p-2;
+}
+.li {
+  @apply list-none inline-block py-[0] px-[20px] hover:text-[#75c8f8];
+}
