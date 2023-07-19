@@ -25,7 +25,9 @@ export default function FlyListScreen(selectedOptions) {
       leg.arrPort === selectedOptions.to.value
   );
   let filteredReturnLegs = returnLegs.filter(
-    (leg) => leg.depPort === selectedOptions.from.value
+    (leg) =>
+      leg.depPort === selectedOptions.from.value &&
+      leg.arrPort === selectedOptions.to.value
   );
   console.log("filteredDepss:", filteredDepartureLegs);
   console.log("filteredreturnss", filteredReturnLegs);
