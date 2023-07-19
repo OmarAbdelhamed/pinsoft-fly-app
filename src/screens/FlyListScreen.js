@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 
 export default function FlyListScreen() {
+
   const dispatch = useDispatch()
   const departureLegs = useSelector((state) => state.data.departureLegs)
   const returnLegs = useSelector((state) => state.data.returnLegs)
@@ -19,8 +20,10 @@ export default function FlyListScreen() {
     dispatch(getReturnLegs())
   },[])
 
+
   console.log(departureLegs);
   console.log(returnLegs);
+
   return (
     <div className="px-96">
       {departureLegs.map((leg, i) => {

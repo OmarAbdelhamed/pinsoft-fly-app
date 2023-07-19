@@ -1,10 +1,40 @@
-import React, { useState } from 'react';
-import FlyList from '../components/FlyListScreen/FlyList';
+import React, { useState, useEffect } from 'react';
 import FlyListScreen from './FlyListScreen';
+import axios from 'axios';
+import Select from 'react-select';
 
 const HomeScreen = () => {
   const [ticketType, setTicketType] = useState('');
-  const [isSearch , setIsSearch] = useState(false)
+  const [isSearch, setIsSearch] = useState(false);
+  const [PortList, setPortList] = useState([]);
+  const [selectedOptionFrom, setSelectedOptionFrom] = useState();
+  const [selectedOptionTo, setSelectedOptionTo] = useState();
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:8001/Ports')
+      .then((res) => setPortList(res.data));
+  }, []);
+
+  const ports = PortList.map((p) => ({
+    label: p.explanation,
+    value: p.explanation,
+  }));
+
+  function handleSelectFrom(data) {
+    setSelectedOptionFrom(data);
+  }
+
+  function handleSelectTo(data) {
+    setSelectedOptionTo(data);
+  }
+
+  const filteredOptionsTo = ports.filter(
+    (p) => p.value !== selectedOptionFrom?.value
+  );
+  const filteredOptionsFrom = ports.filter(
+    (p) => p.value !== selectedOptionTo?.value
+  );
 
   const ticketTypeHandler = (e) => {
     setTicketType(e.target.value);
@@ -22,7 +52,7 @@ const HomeScreen = () => {
           Search for Flights
         </h2>
         <form className='flex flex-row gap-4 max-w-auto mb-4 '>
-          <label for='trip'>Trip Type:</label>
+          <label htmlFor='trip'>Trip Type:</label>
           <select
             id='trip'
             name='trip'
@@ -33,27 +63,26 @@ const HomeScreen = () => {
             <option value='one-way'>One-way</option>
             <option value='round-trip'>Round Trip</option>
           </select>
-          <label for='from'>From:</label>
-          <input
-            type='text'
-            id='from'
-            name='from'
-            required
-            className='input'
-            placeholder='from'
+          <label htmlFor='from'>From:</label>
+          <Select
+            options={filteredOptionsFrom}
+            placeholder='select your destination'
+            value={selectedOptionFrom}
+            onChange={handleSelectFrom}
+            isSearchable={true}
           />
 
-          <label for='to'>To:</label>
-          <input
-            type='text'
-            id='to'
-            name='to'
-            required
-            className='input'
-            placeholder='to'
+          <label htmlFor='to'>To:</label>
+          <Select
+            options={filteredOptionsTo}
+            placeholder='select your destination'
+            value={selectedOptionTo}
+            onChange={handleSelectTo}
+            isSearchable={true}
+            className='min-w-[150px]'
           />
 
-          <label for='date'>Date:</label>
+          <label htmlFor='date'>Date:</label>
           <input type='date' id='date' name='date' required className='input' />
 
           {ticketType === 'round-trip' && (
@@ -69,7 +98,7 @@ const HomeScreen = () => {
             </>
           )}
 
-          <label for='passengers'>Number of Passengers:</label>
+          <label htmlFor='passengers'>Number of Passengers:</label>
           <input
             type='number'
             id='passengers'
@@ -82,13 +111,13 @@ const HomeScreen = () => {
           <button
             type='button'
             className='bg-gray-900 text-white p-2 rounded-md'
-            onClick={()=>setIsSearch(true)}
+            onClick={() => setIsSearch(true)}
           >
             Search
           </button>
         </form>
         {isSearch && <FlyListScreen />}
-        <footer class='bg-gray-100 p-2 text-center'>
+        <footer className='bg-gray-100 p-2 text-center'>
           <p>&copy; 2023 flyBilet Website. All rights reserved.</p>
         </footer>
       </div>

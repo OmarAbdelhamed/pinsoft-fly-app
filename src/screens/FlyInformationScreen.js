@@ -4,7 +4,7 @@ import PassengerInformation from '../components/FlyInformationScreen/PassengerIn
 import MainHeader from '../components/FlyInformationScreen/MainHeader'
 import MiniHeader from '../components/FlyInformationScreen/MiniHeader'
 import InsuranceInformation from '../components/FlyInformationScreen/InsuranceInformation'
-import Header from './Header'
+import Header from '../components/UI/Header'
 
 function FlyInformationScreen() {
   return (
