@@ -4,7 +4,7 @@ function MiniHeader() {
   return (
     <div className="mini-header  flex mt-2">
     <div className="source-destination mr-4">
-        <span>İstanbul -> Berlin</span>
+        <span>İstanbul -{'>'} Berlin</span>
     </div>
     <span className='mr-4'>/</span>
     <div className="fly-date">

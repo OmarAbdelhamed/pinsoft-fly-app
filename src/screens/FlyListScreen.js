@@ -44,6 +44,7 @@ export default function FlyListScreen(selectedOptions) {
             arrTime={leg.arrTime}
             price={leg.priceDetail.basePrice.amount}
             currency={leg.priceDetail.basePrice.currency}
+            date={leg.flightDate}
           />
         );
       })}
@@ -57,6 +58,7 @@ export default function FlyListScreen(selectedOptions) {
             arrTime={leg.arrTime}
             price={leg.priceDetail.basePrice.amount}
             currency={leg.priceDetail.basePrice.currency}
+            date={leg.flightDate}
           />
         );
       })}
