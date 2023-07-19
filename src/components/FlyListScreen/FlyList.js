@@ -1,6 +1,11 @@
-import AirlineCard from "./AirlineCard";
-
-export default function FlyList({ flightNo, depTime, arrTime , price , currency }) {
+export default function FlyList({
+  flightNo,
+  depTime,
+  arrTime,
+  price,
+  currency,
+  airline,
+}) {
   const [depTimeSaat, depTimeDakika] = depTime.split(":");
   const [arrTimeSaat, arrTimeDakika] = arrTime.split(":");
 
@@ -10,11 +15,11 @@ export default function FlyList({ flightNo, depTime, arrTime , price , currency 
   const arrTarih = new Date();
   arrTarih.setHours(arrTimeSaat, arrTimeDakika, 0);
 
-  const farkMilisaniye =arrTarih.getTime() - depTarih.getTime();
+  const farkMilisaniye = arrTarih.getTime() - depTarih.getTime();
 
   const farkSaat = Math.floor(farkMilisaniye / (1000 * 60 * 60));
   const farkDakika = Math.floor((farkMilisaniye / (1000 * 60)) % 60);
-  const sure = `${farkSaat} sa ${farkDakika} dk`
+  const sure = `${farkSaat} sa ${farkDakika} dk`;
   console.log(farkMilisaniye);
 
   return (
@@ -32,7 +37,7 @@ export default function FlyList({ flightNo, depTime, arrTime , price , currency 
         </thead>
         <tbody>
           <tr className="text-center">
-            <td className="p-2">rewrtwet</td>
+            <td className="p-2">{airline}</td>
             <td className="p-2">{flightNo}</td>
             <td className="p-2">{depTime}</td>
             <td className="p-2">{sure}</td>
