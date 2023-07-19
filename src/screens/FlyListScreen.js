@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
 import FlyList from "../components/FlyListScreen/FlyList";
 import axios from "axios";
+import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { getDepartureLegs , getReturnLegs } from "../app/flyDataSlice";
+import { useDispatch } from "react-redux";
 
 
 export default function FlyListScreen() {
-  const [departureLegs ,setDepartureLegs] = useState([])
-  const [returnLegs , setReturnLegs] = useState([])
+  const dispatch = useDispatch()
+  const departureLegs = useSelector((state) => state.data.departureLegs)
+  const returnLegs = useSelector((state) => state.data.returnLegs)
+
   useEffect(()=>{
-    axios.get("http://localhost:8000/departureLegs")
-    .then(res => setDepartureLegs(res.data))
+    dispatch(getDepartureLegs())
   },[])
+  
   useEffect(()=>{
-    axios.get("http://localhost:8000/returnLegs")
-    .then(res => setReturnLegs(res.data))
+    dispatch(getReturnLegs())
   },[])
+
+  console.log(departureLegs);
+  console.log(returnLegs);
   return (
     <div className="px-96">
       {departureLegs.map((leg, i) => {
