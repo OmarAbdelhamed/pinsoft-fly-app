@@ -6,6 +6,9 @@ import axios from "axios";
 export default function FlyListScreen() {
   const [departureLegs ,setDepartureLegs] = useState([])
   const [returnLegs , setReturnLegs] = useState([])
+ 
+
+
   useEffect(()=>{
     axios.get("http://localhost:8000/departureLegs")
     .then(res => setDepartureLegs(res.data))
@@ -14,6 +17,11 @@ export default function FlyListScreen() {
     axios.get("http://localhost:8000/returnLegs")
     .then(res => setReturnLegs(res.data))
   },[])
+
+  
+
+
+
   return (
     <div className="px-96">
       {departureLegs.map((leg, i) => {
