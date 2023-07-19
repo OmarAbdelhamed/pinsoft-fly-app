@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import FlyList from "../components/FlyListScreen/FlyList";
-import axios from "axios";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
-import { getDepartureLegs, getReturnLegs } from "../app/flyDataSlice";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from 'react';
+import FlyList from '../components/FlyListScreen/FlyList';
+import axios from 'axios';
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import { getDepartureLegs, getReturnLegs } from '../app/flyDataSlice';
+import { useDispatch } from 'react-redux';
 
-export default function FlyListScreen(selectedOptions) {
+export default function FlyListScreen(props) {
   const dispatch = useDispatch();
   const departureLegs = useSelector((state) => state.data.departureLegs);
   const returnLegs = useSelector((state) => state.data.returnLegs);
@@ -18,22 +18,21 @@ export default function FlyListScreen(selectedOptions) {
     dispatch(getReturnLegs());
   }, []);
 
-  console.log("selectedOptions", selectedOptions);
   let filteredDepartureLegs = departureLegs.filter(
     (leg) =>
-      leg.depPort === selectedOptions.from.value &&
-      leg.arrPort === selectedOptions.to.value
+      leg.depPort === props.from.value &&
+      leg.arrPort === props.to.value &&
+      leg.flightDate === props.Date
   );
   let filteredReturnLegs = returnLegs.filter(
     (leg) =>
-      leg.depPort === selectedOptions.from.value &&
-      leg.arrPort === selectedOptions.to.value
+      leg.depPort === props.from.value &&
+      leg.arrPort === props.to.value &&
+      leg.flightDate === props.Date
   );
-  console.log("filteredDepss:", filteredDepartureLegs);
-  console.log("filteredreturnss", filteredReturnLegs);
 
   return (
-    <div className="px-96">
+    <div className='px-96'>
       {filteredDepartureLegs.map((leg, i) => {
         return (
           <FlyList
