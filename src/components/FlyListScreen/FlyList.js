@@ -1,4 +1,3 @@
-import AirlineCard from "./AirlineCard";
 
 export default function FlyList({ flightNo, depTime, arrTime , price , currency }) {
   const [depTimeSaat, depTimeDakika] = depTime.split(":");
