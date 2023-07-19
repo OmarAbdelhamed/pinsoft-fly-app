@@ -39,7 +39,7 @@ const HomeScreen = () => {
     (p) => p.value !== selectedOptionTo?.value
   );
 
-  console.log("filteredfrom", filteredOptionsTo);
+  
 
   const ticketTypeHandler = (e) => {
     setTicketType(e.target.value);
