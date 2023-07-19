@@ -9,6 +9,7 @@ const HomeForm = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [selectedOptionFrom, setSelectedOptionFrom] = useState();
   const [selectedOptionTo, setSelectedOptionTo] = useState();
+  const [selectedDate, setSelectedDate] = useState('');
 
   const dispatch = useDispatch();
   const portList = useSelector((state) => state.data.ports);
@@ -32,6 +33,9 @@ const HomeForm = () => {
 
   function handleSelectTo(data) {
     setSelectedOptionTo(data);
+  }
+  function handleSelectedDate(e) {
+    setSelectedDate(e.target.value);
   }
 
   const filteredOptionsTo = ports.filter(
@@ -75,7 +79,16 @@ const HomeForm = () => {
         />
 
         <label htmlFor='date'>Date:</label>
-        <input type='date' id='date' name='date' required className='input' />
+        <input
+          type='date'
+          id='date'
+          name='date'
+          onChange={(event) => {
+            handleSelectedDate(event);
+          }}
+          required
+          className='input'
+        />
 
         {ticketType === 'round-trip' && (
           <>
@@ -109,7 +122,11 @@ const HomeForm = () => {
         </button>
       </form>
       {isSearch && (
-        <FlyListScreen from={selectedOptionFrom} to={selectedOptionTo} />
+        <FlyListScreen
+          from={selectedOptionFrom}
+          to={selectedOptionTo}
+          Date={selectedDate}
+        />
       )}
     </>
   );
