@@ -17,8 +17,8 @@ const FlyTicketScreen = () =>  {
           </div>
         </div>
         <div className='flex w-full h-72 grid  grid-cols-4 gap-2'>
-          <div className='col-start-1 col-span-3 pl-20 flex flex-col border-r-4 border-dashed border-[#ffd1dd]'>
-            <div className='grid grid-cols-4 grid-rows-2 mt-5'>
+          <div className='col-start-1 col-span-3  flex flex-col border-r-4 border-dashed border-[#ffd1dd]'>
+            <div className='grid grid-cols-4 pl-20 grid-rows-2 mt-5'>
                 <div className='passenger-name flex flex-col  '>
                   <span className='font-bold'>Yolcu Adı:</span>
                   <span>MELİHCAN ŞİMŞEK</span>
@@ -54,8 +54,8 @@ const FlyTicketScreen = () =>  {
              </div>
              </div>
             
-            <div className='bottom-container grid grid-cols-3  flex  flex-row mt-5'>
-            <div className='departure flex flex-col  text-center text-[#fa205a]'>
+            <div className='bottom-container grid grid-cols-5  flex  flex-row mt-5'>
+            <div className='departure col-start-2 flex flex-col  text-center text-[#fa205a]'>
                   <span className='font-bold text-2xl'>Kalkış</span>
                   <span className='text-xl'>21:45</span>
                   <span className='text-xl'>19 Temmuz, Çarşamba</span>
