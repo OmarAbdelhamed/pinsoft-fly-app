@@ -8,6 +8,7 @@ import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import FlyListScreen from "./screens/FlyListScreen";
 import HomeScreen from './screens/HomeScreen';
 import Header from './components/UI/Header';
+import FlyTicketScreen from './screens/FlyTicketScreen';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/flylist",
     element: <FlyListScreen />,
+  },
+  {
+    path: "/ticket",
+    element: <FlyTicketScreen />,
   },
   {
     path: "*",

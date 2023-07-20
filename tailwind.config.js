@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: {
         first: "url('/src/assets/img/status.jpg')",
       },
+      fontFamily: {
+        ticket: "VT323",
+      },
       colors: {
         'primary-color': '#3d5cb8',
         'primary-color-dark': '#334c99',

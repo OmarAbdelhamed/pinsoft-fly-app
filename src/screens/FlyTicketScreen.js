@@ -1,6 +1,7 @@
 import React from 'react'
 import Footer from '../components/UI/footer';
 import planeIcon from '../assets/img/TicketAirplane.png';
+import "@fontsource/vt323";
 
 
 
@@ -21,9 +22,9 @@ const FlyTicketScreen = () =>  {
         </div>
         <div className='flex w-full sm:h-80 md:h-72 grid  grid-cols-4 gap-2'>
           <div className='col-start-1 col-span-3  flex flex-col border-r-4 border-dashed border-[#ffd1dd]'>
-            <div className='grid grid-cols-4 pl-20 grid-rows-2 mt-5'>
+            <div className='grid grid-cols-4 pl-20 grid-rows-2 mt-3 font-ticket text-[1.3rem]'>
                 <div className='passenger-name flex flex-col  '>
-                  <span className='font-bold'>Yolcu Adı:</span>
+                  <span className='font-bold '>Yolcu Adı:</span>
                   <span>MELİHCAN ŞİMŞEK</span>
                 </div>
                 <div className='passenger-type flex flex-col '>
@@ -36,16 +37,16 @@ const FlyTicketScreen = () =>  {
                 </div>
                 <div className='insurance flex flex-col '>
                   <span className='font-bold'>Uçuş Sigortası:</span>
-                  <span>Yok</span>
+                  <span>YOK</span>
                 </div>
             
             <div className='source flex flex-col mt-2'>
                   <span className='font-bold'>Konum:</span>
-                  <span>İSTANBUL</span>
+                  <span>DÜSSELDORF</span>
              </div>
              <div className='destination flex flex-col mt-2'>
                   <span className='font-bold'>Hedef:</span>
-                  <span>BERLİN</span>
+                  <span>ANTALYA</span>
              </div>
              <div className='date flex flex-col mt-2'>
                   <span className='font-bold'>Tarih:</span>
@@ -53,24 +54,24 @@ const FlyTicketScreen = () =>  {
              </div>
              <div className='luggage flex flex-col mt-2'>
                   <span className='font-bold'>Bagaj:</span>
-                  <span>Yok</span>
+                  <span>YOK</span>
              </div>
              </div>
             
-            <div className='bottom-container grid grid-cols-5  flex  flex-row mt-5'>
+            <div className='bottom-container grid grid-cols-5  flex  flex-row mt-5 font-ticket '>
             <div className='departure col-start-2 flex flex-col  text-center text-[#fa205a]'>
-                  <span className='font-bold text-2xl'>Kalkış</span>
-                  <span className='text-xl'>21:45</span>
-                  <span className='text-xl'>19 Temmuz, Çarşamba</span>
+                  <span className='font-bold text-[1.5rem]'>Kalkış</span>
+                  <span className='text-[1.3rem]'>21:45</span>
+                  <span className='text-[1.3rem]'>19 Temmuz, Çarşamba</span>
              </div>
              <div className='time flex flex-col text-center text-[#fa205a]'>
-                  <span className='font-bold text-2xl'>Süre</span>
-                  <span className='text-xl'>2 sa 35 dk</span>
+                  <span className='font-bold text-[1.5rem]'>Süre</span>
+                  <span className='text-[1.3rem]'>2 sa 35 dk</span>
              </div>
              <div className='land flex flex-col  text-center text-[#fa205a]'>
-                  <span className='font-bold text-2xl'>Varış</span>
-                  <span className='text-xl'>23:20</span>
-                  <span className='text-xl'>19 Temmuz, Çarşamba</span>
+                  <span className='font-bold text-[1.5rem]'>Varış</span>
+                  <span className='text-[1.3rem]'>23:20</span>
+                  <span className='text-[1.3rem]'>19 Temmuz, Çarşamba</span>
              </div>
             </div>
           
@@ -78,45 +79,45 @@ const FlyTicketScreen = () =>  {
 
 
 
-          <div className='col-span-1'>
+          <div className='col-span-1 font-ticket'>
            <div className='passenger-name flex flex-col mt-2'>
-                  <span className='font-bold '>Yolcu Adı:</span>
-                  <span className='text-lg'>Melihcan Şimşek</span>
+                  <span className='font-bold text-[1.1rem] '>Yolcu Adı:</span>
+                  <span className='text-[1.5rem]'>Melihcan Şimşek</span>
             </div>
-            <div className='source flex flex-row items-center'>
-                  <span className='font-bold '>Konum: </span>
-                  <span className='text-lg'>İstanbul IST</span>
+            <div className='source flex flex-row'>
+                  <span className='font-bold pr-1 text-[1.1rem] '>Konum: </span>
+                  <span className='text-[1.2rem]'>Düsseldorf DUS</span>
              </div>
-             <div className='destination flex flex-row items-center'>
-                  <span className='font-bold '>Hedef: </span>
-                  <span className='text-lg'>Berlin BER</span>
+             <div className='destination flex flex-row '>
+                  <span className='font-bold pr-1 text-[1.1rem]'>Hedef: </span>
+                  <span className='text-[1.2rem]'>Antalya AYT</span>
              </div>
-             <div className='grid grid-cols-2 grid-rows-3 mt-3'>
+             <div className='grid grid-cols-2 grid-rows-3 mt-1'>
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Kuyruk No:</span>
-                    <span>XQ 185</span>
+                    <span className='font-bold text-[1rem]'>Kuyruk No:</span>
+                    <span className='text-[1.2rem]'>XQ 185</span>
                 </div>
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Tarih:</span>
-                    <span>19.07.2023</span>
+                    <span className='font-bold text-[1rem]'>Tarih:</span>
+                    <span className='text-[1.2rem]'>19.07.2023</span>
                 </div>
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Sigorta</span>
-                    <span>Yok</span>
+                    <span className='font-bold text-[1rem]'>Sigorta</span>
+                    <span className='text-[1.2rem]'>Yok</span>
                 </div>
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Bagaj:</span>
-                    <span>Yok</span>
+                    <span className='font-bold text-[1rem]'>Bagaj:</span>
+                    <span className='text-[1.2rem]'>Yok</span>
                 </div>
                
                
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Kalkış</span>
-                    <span>21:45</span>
+                    <span className='font-bold text-[1rem]'>Kalkış</span>
+                    <span className='text-[1.2rem]'>21:45</span>
                 </div>
                 <div className='flex flex-col'>
-                    <span className='font-bold text-sm'>Varış</span>
-                    <span>23:20</span>
+                    <span className='font-bold text-[1rem]'>Varış</span>
+                    <span className='text-[1.2rem]'>23:20</span>
                 </div>
              </div>
           </div>
