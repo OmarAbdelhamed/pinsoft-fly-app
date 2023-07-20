@@ -1,5 +1,5 @@
 
-export default function FlyList({ flightNo, depTime, arrTime , price , currency }) {
+export default function FlyList({ flightNo, depTime, arrTime , price , currency , airline }) {
   const [depTimeSaat, depTimeDakika] = depTime.split(":");
   const [arrTimeSaat, arrTimeDakika] = arrTime.split(":");
 
@@ -31,7 +31,7 @@ export default function FlyList({ flightNo, depTime, arrTime , price , currency 
         </thead>
         <tbody>
           <tr className="text-center">
-            <td className="p-2">rewrtwet</td>
+            <td className="p-2">{airline}</td>
             <td className="p-2">{flightNo}</td>
             <td className="p-2">{depTime}</td>
             <td className="p-2">{sure}</td>

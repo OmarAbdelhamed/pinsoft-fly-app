@@ -11,7 +11,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <div className='px-[200px]'>
+    <div className='px-[160px]'>
       <h5 className=' text-center text-2xl pt-2 '> FLYBilet</h5>
       <h1 className=' text-center text-4xl p-4'>
         {' '}

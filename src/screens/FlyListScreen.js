@@ -22,7 +22,7 @@ export default function FlyListScreen() {
   console.log(departureLegs);
   console.log(returnLegs);
   return (
-    <div className="px-96">
+    <div className="px-64">
       {departureLegs.map((leg, i) => {
         return (
           <FlyList
