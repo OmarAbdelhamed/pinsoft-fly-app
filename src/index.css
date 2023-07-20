@@ -13,3 +13,4 @@ body {
 .li {
   @apply list-none  py-[0] px-[20px]  text-text-light  hover:text-text-dark font-medium transition-colors hidden md:inline-block;
 }
+

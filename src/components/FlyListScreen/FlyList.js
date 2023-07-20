@@ -24,17 +24,17 @@ export default function FlyList({
   console.log(farkMilisaniye);
 
   return (
-    <div className='bg-white p-4 border-2 border-black m-4'>
-      <table className='w-full border-collapse'>
+    <div className='bg-white w-[350px] md:w-auto mb-2 border-2 border-black overflow-hidden lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4'>
+      <table className='w-full border-collapse text-[9px] md:text-lg  '>
         <thead>
-          <tr className='bg-gray-200'>
+          <tr className='bg-gray-200 text-[10px] md:text-xl'>
             <th className='p-2'>Havayolu</th>
             <th className='p-2'>Kuyruk No</th>
             <th className='p-2'>Kalkış</th>
             <th className='p-2'>Süre</th>
             <th className='p-2'>Varış</th>
             <th className='p-2'>Fiyat (kişi)</th>
-            <th className='p-2'>tarih</th>
+            <th className='p-2'>Tarih</th>
           </tr>
         </thead>
         <tbody>
