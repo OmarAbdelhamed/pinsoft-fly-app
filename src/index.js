@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 //router
 import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 import FlyListScreen from "./screens/FlyListScreen";
-import Navbar from "./components/UI/Navbar";
 import HomeScreen from './screens/HomeScreen';
-import Header from './screens/Header';
+import Header from './components/UI/Header';
 
 const router = createBrowserRouter([
   {
