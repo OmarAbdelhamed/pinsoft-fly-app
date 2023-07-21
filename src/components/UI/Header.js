@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { GiLibertyWing } from 'react-icons/gi';
 
 const Header = () => {
   const [top, setTop] = useState(true);
@@ -9,8 +10,8 @@ const Header = () => {
     const scrollHandler = () => {
       window.scrollY > 10 ? setTop(false) : setTop(true);
     };
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
   }, [top]);
 
   // if (mobileNavbar) {
@@ -57,28 +58,29 @@ const Header = () => {
           !top && `bg-white shadow-lg`
         } sm:px-[265px] lg:px-[300px] z-20  `}
       >
-        <div className=" text-[1.5rem] font-semibold justify-center text-text-dark">
+        <div className='text-[1.5rem] font-semibold justify-center items-center gap-1 text-primary-color-dark flex flex-row'>
+          <GiLibertyWing  className=''/>
           FLYBilet
         </div>
-        <ul className=" list-none flex items-center gap-[2rem]">
-          <li className="li">
-            <a href="/">Home</a>
+        <ul className=' list-none flex items-center gap-[2rem]'>
+          <li className='li'>
+            <a href='/'>Home</a>
           </li>
-          <li className="li">
-            <a href="/">About</a>
+          <li className='li'>
+            <a href='/'>About</a>
           </li>
-          <li className="li">
-            <a href="/">Offers</a>
+          <li className='li'>
+            <a href='/'>Offers</a>
           </li>
-          <li className="li">
-            <a href="/">Seats</a>
+          <li className='li'>
+            <a href='/'>Seats</a>
           </li>
-          <li className="li">
-            <a href="/">Destinations</a>
+          <li className='li'>
+            <a href='/'>Destinations</a>
           </li>
         </ul>
-        <button className="px-3 py-2 outline-none border-none text-lg font-medium text-white bg-primary-color rounded-2xl shadow-lg cursor-pointer transition duration-300 hover:bg-primary-color-dark max-h-[44px] min-w-[110px] hidden xl:inline-block ">
-          <a href="#book" className=" scroll-smooth">
+        <button className='px-3 py-2 outline-none border-none text-lg font-medium text-white bg-primary-color rounded-2xl shadow-lg cursor-pointer transition duration-300 hover:bg-primary-color-dark max-h-[44px] min-w-[110px] hidden xl:inline-block '>
+          <a href='#book' className=' scroll-smooth'>
             Book Now
           </a>
         </button>

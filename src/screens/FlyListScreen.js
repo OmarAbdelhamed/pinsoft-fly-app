@@ -32,7 +32,7 @@ export default function FlyListScreen(props) {
   );
 
   return (
-    <div className='lg:px-36 lg:m-4 '>
+    <div className='lg:px-36 lg:m-4  pt-5'>
       {filteredDepartureLegs.map((leg, i) => {
         return (
           <FlyList
