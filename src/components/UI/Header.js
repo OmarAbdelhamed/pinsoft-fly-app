@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { GiLibertyWing } from 'react-icons/gi';
+import userAvatar from '../../assets/img/UserAvatar.png';
+import { MdLogout,MdAirplaneTicket,MdSupervisedUserCircle } from 'react-icons/md';
+
+
 
 const Header = () => {
   const [top, setTop] = useState(true);
   const [mobileNavbar, setMobileNavbar] = useState(true);
   const [toggleMobileNavbar, setToggleMobileNavbar] = useState(false);
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
 
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -91,12 +101,48 @@ const Header = () => {
             <a href='/'>Destinations</a>
           </li>
         </ul>
-        <button className='px-3 py-2 outline-none border-none text-lg font-medium text-white bg-primary-color rounded-2xl shadow-lg cursor-pointer transition duration-300 hover:bg-primary-color-dark max-h-[44px] min-w-[110px] hidden xl:inline-block '>
+        {/* <button className='px-3 py-2 outline-none border-none text-lg font-medium text-white bg-primary-color rounded-2xl shadow-lg cursor-pointer transition duration-300 hover:bg-primary-color-dark max-h-[44px] min-w-[110px] hidden xl:inline-block '>
           <a href='#book' className=' scroll-smooth'>
             Book Now
           </a>
-        </button>
+        </button> */}
+        <div>
+         <button type="button" onClick={handleOpen}>
+          <img src={userAvatar} alt="user" className="min-w-[50px] min-h-[50px]  h-[50px] w-[50px] rounded-full border-2 hover:bg-slate-200 cursor-pointer"/>
+          </button>
+        <div className="dropdown flex flex-col absolute">
+      {open ? (
+        <ul className="menu  text-left bg-white cursor-pointer border-2">
+          <li className="menu-item px-2 py-2 hover:bg-primary-color hover:text-white ">
+            <div className='flex flex-row items-center gap-1'>
+                <MdSupervisedUserCircle className='text-xl'/>
+                <span>Profile</span>
+            </div>
+            
+          </li>
+          <hr/>
+          <li className="menu-item px-2 py-2  hover:bg-primary-color hover:text-white">
+            <div className='flex flex-row items-center gap-1'>
+            <MdAirplaneTicket className='text-xl'/>
+            <span>Tickets</span>
+            </div>
+          </li>
+          <hr/>
+          <li className="menu-item px-2 py-2 hover:bg-primary-color hover:text-white">
+            <div className='flex flex-row items-center gap-1'>
+            <MdLogout className='text-xl'/> 
+            <span>Logout</span>
+            </div>
+          </li>
+        </ul>
+      ) : null}
+      </div>
+      </div>
+    
+        
+
       </nav>
+     
     </>
   );
 };

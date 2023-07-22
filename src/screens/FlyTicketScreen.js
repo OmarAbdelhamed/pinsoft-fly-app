@@ -12,7 +12,7 @@ const FlyTicketScreen = () =>  {
         <div className="main-container md:w-5/6  flex flex-col   shadow-2xl  ">
         <div className='flex w-full items-center grid grid-cols-4 gap-2 bg-[#fa205a] h-20 rounded-t-lg '>
           <div className=' col-start-1 col-span-3 flex justify-between items-center h-20 border-r-4 border-dashed border-[#ffd1dd]'>
-            <img src={planeIcon} alt='plane' className='w-[50px] h-[50px] ml-20 '></img>
+            <img src={planeIcon} alt='plane' className='w-[50px] h-[50px] sm:ml-4 md:ml-20 '></img>
             <span className='flex items-center font-bold text-2xl text-white'>SunExpress</span>
             <span className='flex items-center font-bold text-2xl mr-4 text-white'>Biniş Kartı</span>
           </div>
@@ -22,7 +22,7 @@ const FlyTicketScreen = () =>  {
         </div>
         <div className='flex w-full sm:h-80 md:h-72 grid  grid-cols-4 gap-2'>
           <div className='col-start-1 col-span-3  flex flex-col border-r-4 border-dashed border-[#ffd1dd]'>
-            <div className='grid grid-cols-4 pl-20 grid-rows-2 mt-3 font-ticket text-[1.3rem]'>
+            <div className='grid grid-cols-4 sm:pl-4 md:pl-20 grid-rows-2 mt-3 font-ticket text-[1.3rem]'>
                 <div className='passenger-name flex flex-col  '>
                   <span className='font-bold '>Yolcu Adı:</span>
                   <span>MELİHCAN ŞİMŞEK</span>
