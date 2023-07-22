@@ -6,6 +6,18 @@ const Header = () => {
   const [mobileNavbar, setMobileNavbar] = useState(true);
   const [toggleMobileNavbar, setToggleMobileNavbar] = useState(false);
 
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
+      });
+    });
+  });
+  
+
   useEffect(() => {
     const scrollHandler = () => {
       window.scrollY > 10 ? setTop(false) : setTop(true);

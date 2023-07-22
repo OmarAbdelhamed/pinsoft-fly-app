@@ -58,11 +58,11 @@ const HomeForm = () => {
   }, []);
 
   const customStyles = {
-    control: base => ({
+    control: (base) => ({
       ...base,
       height: 43,
-      minWidth: 255
-    })
+      minWidth: 255,
+    }),
   };
 
   const ports = portList.map((p) => ({
@@ -100,11 +100,11 @@ const HomeForm = () => {
   return (
     <>
       <div className='bg-[#d9d9d9] w-[360px] rounded py-4 my-3 px-2  lg:w-auto mx-auto backdrop-blur-sm bg-white/30'>
-        <h2 className='text-5xl font-bold mb-4 text-center text-primary-color-dark'>
+        <h2 className='text-5xl font-bold mb-4 text-center text-gray-100 font-Headlines'>
           Search for Flights
         </h2>
         <form className='grid grid-flow-row px-4 grid-cols-6 grid-rows-2 items-center lg:gap-6 max-w-auto mb-4 bg-transparent place-items-center  '>
-          <label htmlFor='trip'>
+          <label htmlFor='trip' className='font-Headlines text-gray-700'>
             Trip Type:
             <Select
               options={TktTypes}
@@ -118,7 +118,7 @@ const HomeForm = () => {
             ></Select>
           </label>
 
-          <label htmlFor='from'>
+          <label htmlFor='from' className='font-Headlines text-gray-700'>
             From:
             <Select
               isClearable
@@ -131,7 +131,7 @@ const HomeForm = () => {
             />
           </label>
 
-          <label htmlFor='to'>
+          <label htmlFor='to' className='font-Headlines text-gray-700'>
             To:
             <Select
               isClearable
@@ -144,7 +144,7 @@ const HomeForm = () => {
             />
           </label>
 
-          <label htmlFor='date'>
+          <label htmlFor='date' className='font-Headlines text-gray-700'>
             Date:
             <input
               type='date'
@@ -160,7 +160,7 @@ const HomeForm = () => {
 
           {(ticketType.label === 'Round-Trip' && (
             <>
-              <label htmlFor='returnDate'>
+              <label htmlFor='returnDate' className='font-Headlines text-gray-700'>
                 Return Date:
                 <input
                   type='date'
@@ -173,7 +173,7 @@ const HomeForm = () => {
             </>
           )) || (
             <>
-              <label htmlFor='returnDate'>
+              <label htmlFor='returnDate' className='font-Headlines text-gray-700'>
                 Return Date:
                 <input
                   type='text'
@@ -191,7 +191,7 @@ const HomeForm = () => {
             <div className='mb-2'>
               <label
                 htmlFor='total-count'
-                className='block text-sm font-medium text-gray-700'
+                className='block text-sm font-medium text-gray-700 font-Headlines'
               >
                 Passengers
               </label>

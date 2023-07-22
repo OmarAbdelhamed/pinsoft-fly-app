@@ -1,3 +1,4 @@
+import { SiChinasouthernairlines } from 'react-icons/si';
 export default function FlyList({
   flightNo,
   depTime,
@@ -6,6 +7,9 @@ export default function FlyList({
   currency,
   airline,
   date,
+  depPort,
+  arrPort,
+  Ports,
 }) {
   const [depTimeSaat, depTimeDakika] = depTime.split(':');
   const [arrTimeSaat, arrTimeDakika] = arrTime.split(':');
@@ -24,31 +28,40 @@ export default function FlyList({
   console.log(farkMilisaniye);
 
   return (
-    <div className='bg-white w-[350px] md:w-auto mb-2 border-2 border-black overflow-hidden lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 '>
-      <table className='w-full border-collapse text-[9px] md:text-lg  '>
-        <thead>
-          <tr className='bg-gray-200 text-[10px] md:text-xl '>
-            <th className='p-2'>Havayolu</th>
-            <th className='p-2'>Kuyruk No</th>
-            <th className='p-2'>Kalkış</th>
-            <th className='p-2'>Süre</th>
-            <th className='p-2'>Varış</th>
-            <th className='p-2'>Fiyat (kişi)</th>
-            <th className='p-2'>Tarih</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className='text-center pt-[100px]'>
-            <td className='p-2'>{airline}</td>
-            <td className='p-2'>{flightNo}</td>
-            <td className='p-2'>{depTime}</td>
-            <td className='p-2'>{sure}</td>
-            <td className='p-2'>{arrTime}</td>
-            <td className='p-2'>{`${price} ${currency}`}</td>
-            <td className='p-2'>{date}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div className='bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 grid grid-cols-3 items-center place-content-center text-center backdrop-blur-sm bg-white/90 '>
+      <div className='text-2xl flex flex-row justify-center items-center gap-3'>
+        <SiChinasouthernairlines className='text-3xl text-yellow-300' />
+        {airline}
+      </div>
+      <div className='flex flex-row justify-between'>
+        <div className=' flex flex-col text-2xl gap-4 text-right'>
+          <span>
+            {depTimeSaat}:{depTimeDakika}
+          </span>
+          <span>{depPort}</span>
+        </div>
+        <div className='flex flex-col gap-1'>
+          <div>{sure}</div>
+          <div className='items-center text-center relative '>
+            <span className='  after:content-[""] after:w-[8px] after:absolute after:-right-[0.01rem] after:top-[1.29rem] after:h-[1px] after:block after:bg-black  after:-rotate-45 before:content-[""] before:w-[8px] before:absolute before:-right-[0.01rem] before:top-[0.86rem] before:h-[1px] before:block before:bg-black  before:rotate-45   '>
+              ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+            </span>
+          </div>
+          <div>{flightNo}</div>
+        </div>
+        <div className=' flex flex-col text-2xl gap-4 text-left'>
+          <span>
+            {arrTimeSaat}:{arrTimeDakika}
+          </span>
+          <div className='flex flex-row'>
+            <span>{arrPort}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className='text-3xl w-auto h-auto'>
+        {price} <span className='text-xl'>{currency}</span>
+      </div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ body {
 }
 
 .li {
-  @apply list-none  py-[0] px-[20px]  text-text-light  hover:text-primary-color-dark font-medium transition-colors hidden md:inline-block;
+  @apply list-none  py-[0] px-[20px]  text-text-light  hover:text-primary-color-dark font-medium transition-colors hidden md:inline-block after:hover:w-full after:hover:bg-black after:hover:h-[2px] after:hover:block after:hover:content-[''] after:hover:transition after:hover:ease-linear;
 }
 
 input[type='text']:focus ~ .input-text,
