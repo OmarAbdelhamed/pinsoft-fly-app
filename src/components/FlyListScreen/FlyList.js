@@ -1,4 +1,5 @@
 import { SiChinasouthernairlines } from 'react-icons/si';
+import { useNavigate } from 'react-router';
 export default function FlyList({
   flightNo,
   depTime,
@@ -14,6 +15,12 @@ export default function FlyList({
   const [depTimeSaat, depTimeDakika] = depTime.split(':');
   const [arrTimeSaat, arrTimeDakika] = arrTime.split(':');
 
+  const navigate = useNavigate();
+
+  const nextPageHandler = () => {
+    navigate('/Details');
+  };
+
   const depTarih = new Date();
   depTarih.setHours(depTimeSaat, depTimeDakika, 0);
 
@@ -28,7 +35,10 @@ export default function FlyList({
   console.log(farkMilisaniye);
 
   return (
-    <div className='bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 grid grid-cols-3 items-center place-content-center text-center backdrop-blur-sm bg-white/90 '>
+    <div
+      onClick={nextPageHandler}
+      className='bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 grid grid-cols-3 items-center place-content-center text-center backdrop-blur-sm bg-white/90 '
+    >
       <div className='text-2xl flex flex-row justify-center items-center gap-3'>
         <SiChinasouthernairlines className='text-3xl text-yellow-300' />
         {airline}

@@ -160,20 +160,26 @@ const HomeForm = () => {
 
           {(ticketType.label === 'Round-Trip' && (
             <>
-              <label htmlFor='returnDate' className='font-Headlines text-gray-700'>
+              <label
+                htmlFor='returnDate'
+                className='font-Headlines text-gray-700'
+              >
                 Return Date:
                 <input
                   type='date'
                   id='returnDate'
                   name='returnDate'
                   required
-                  className='border border-gray-300 rounded-md p-2 min-w-full'
+                  className='border border-gray-300 rounded-md p-2  min-w-[255px]'
                 />
               </label>
             </>
           )) || (
             <>
-              <label htmlFor='returnDate' className='font-Headlines text-gray-700'>
+              <label
+                htmlFor='returnDate'
+                className='font-Headlines text-gray-700'
+              >
                 Return Date:
                 <input
                   type='text'
@@ -181,7 +187,7 @@ const HomeForm = () => {
                   placeholder='One Way'
                   name='returnDate'
                   disabled
-                  className='border border-gray-300 rounded-md p-2 min-w-full'
+                  className='border border-gray-300 rounded-md p-2 min-w-[255px]'
                 />
               </label>
             </>

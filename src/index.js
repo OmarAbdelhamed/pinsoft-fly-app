@@ -9,6 +9,7 @@ import FlyListScreen from './screens/FlyListScreen';
 import HomeScreen from './screens/HomeScreen';
 import Header from './components/UI/Header';
 import FlyTicketScreen from './screens/FlyTicketScreen';
+import FlyingDetailScreen from './screens/FlyingDetailScreen';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,8 @@ const router = createBrowserRouter([
     element: <HomeScreen />,
   },
   {
-    path: '/flylist',
-    element: <FlyListScreen />,
+    path: '/Details',
+    element: <FlyingDetailScreen />,
   },
   {
     path: '/ticket',
