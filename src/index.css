@@ -18,3 +18,33 @@ input[type='text']:focus ~ .input-text,
 input[type='text']:not(:placeholder-shown) ~ .input-text {
   @apply text-blue-500 transform -translate-y-10 -translate-x-2 scale-75;
 }
+
+.warning-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.warning-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add any additional styling as needed */
