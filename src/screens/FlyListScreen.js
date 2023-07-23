@@ -5,6 +5,7 @@ import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
 import { getDepartureLegs, getReturnLegs } from '../app/flyDataSlice';
 import { useDispatch } from 'react-redux';
 import { getPorts } from '../app/flyDataSlice';
+import Flyinformation from '../components/FlyingDetailScreen/FlyInformation'
 
 export default function FlyListScreen(props) {
   const dispatch = useDispatch();
@@ -73,6 +74,8 @@ export default function FlyListScreen(props) {
           />
         );
       })}
+
+      
     </div>
   );
 }

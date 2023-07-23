@@ -37,7 +37,7 @@ export default function FlyList({
   return (
     <div
       onClick={nextPageHandler}
-      className='bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 grid grid-cols-3 items-center place-content-center text-center backdrop-blur-sm bg-white/90 '
+      className= ' cursor-pointer bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg md:hover:scale-105  lg:m-4 grid grid-cols-3 items-center place-content-center text-center backdrop-blur-sm bg-white/90 '
     >
       <div className='text-2xl flex flex-row justify-center items-center gap-3'>
         <SiChinasouthernairlines className='text-3xl text-yellow-300' />
