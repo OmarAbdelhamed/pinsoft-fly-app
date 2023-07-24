@@ -1,52 +1,44 @@
-import React from "react";
+import React from 'react';
+import { SiChinasouthernairlines } from 'react-icons/si';
 
 const FlyInformation = () => {
   return (
-    <div className="items-center justify-center ">
-      <div className="border border-black p-10 relative">
-        <h2 className="text-4xl mb-4">Uçuş Bilgileri</h2>
-        <div className="absolute top-0 right-0">
-          <button className="text-blue-500 py-2 px-4 rounded">
-            Uçuş Kuralları
-          </button>
+    <>
+      <h1 className='text-5xl font-bold mb-4 text-center text-slate-800 font-Headlines'>
+        Make Sure You Choose The right Flight
+      </h1>
+      <div className=' bg-white w-[350px] md:w-auto mb-2 border-2 border-slate-300  lg:min-h-[140px]  lg:p-4 rounded-lg   lg:m-4 grid grid-cols-3 items-center place-content-center text-center '>
+        <div className='text-2xl w-[250px] flex flex-row justify-center items-center gap-3'>
+          <SiChinasouthernairlines className='text-3xl text-yellow-300' />
+          Pegasus
         </div>
-        <div className="flex">
-          <div className="flex-1">
-            <p className="mb-4">
-              Havayolu
-            </p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Örnek.jpg" alt="Thy Logo" className="w-12 h-12 inline-block mr-2" />
-            <p className="mb-4">Thy</p>
+        <div className='flex flex-row justify-between items-center relative -left-[50px]'>
+          <div className=' flex flex-col text-2xl gap-4 text-right'>
+            <span>12:30</span>
+            <span>Düsseldorf</span>
+            <span className='-mt-4 text-lg text-slate-600'>DUS</span>
           </div>
-          <div className="flex-1 ml-4">
-            <p className="mb-4">Kaynak No</p>
-            <p className="mb-4">XQ 185</p>
+          <div className='flex flex-col gap-1 mx-4'>
+            <div>4:30:00</div>
+            <div className='items-center text-center relative '>
+              <span className='  after:content-[""] after:w-[8px] after:absolute after:-right-[0.01rem] after:top-[1.29rem] after:h-[1px] after:block after:bg-black  after:-rotate-45 before:content-[""] before:w-[8px] before:absolute before:-right-[0.01rem] before:top-[0.86rem] before:h-[1px] before:block before:bg-black  before:rotate-45   '>
+                ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+              </span>
+            </div>
+            <div>XQ 185 </div>
           </div>
-          <div className="flex-1 ml-4">
-            <p className="mb-4">Kalkış</p>
-            <p className="mb-4">21:30</p>
-            <p className="mb-4">IST</p>
-            <p className="mb-4">14 Temmuz, Cuma</p>
-          </div>
-          <div className="flex-1 ml-4">
-            <p className="mb-4">Süre</p>
-            <p className="mb-4">2:30</p>
-          </div>
-          <div className="flex-1 ml-4">
-            <p className="mb-4">Varış</p>
-            <p className="mb-4">00:00</p>
-            <p className="mb-4">ANT</p>
-            <p className="mb-4">15 Temmuz, Cumartesi</p>
+          <div className=' flex flex-col text-2xl gap-4 text-left'>
+            <span>12:30</span>
+            <span>Antalya</span>
+            <span className='-mt-4 text-lg text-slate-600'>AYT</span>
           </div>
         </div>
-        <p className="text-xs text-left absolute bottom-0 left-0 mb-8 ml-8">
-          Sadece el bagaj hakkınız bulunmaktadır.
-          <button className="text-blue-500 ml-3">
-            Ekstra Bagaj
-          </button>
-        </p>
+
+        <div className='text-3xl w-auto h-auto'>
+          3999.99 <span className='text-xl'>EUR</span>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

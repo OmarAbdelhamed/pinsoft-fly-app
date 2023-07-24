@@ -4,14 +4,21 @@ import axios from 'axios';
 import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
 import { getDepartureLegs, getReturnLegs } from '../app/flyDataSlice';
 import { useDispatch } from 'react-redux';
+import { getPorts } from '../app/flyDataSlice';
+import Flyinformation from '../components/FlyingDetailScreen/FlyInformation';
 
 export default function FlyListScreen(props) {
   const dispatch = useDispatch();
   const departureLegs = useSelector((state) => state.data.departureLegs);
   const returnLegs = useSelector((state) => state.data.returnLegs);
+  const Ports = useSelector((state) => state.data.Ports);
 
   useEffect(() => {
     dispatch(getDepartureLegs());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getPorts());
   }, []);
 
   useEffect(() => {
@@ -32,7 +39,7 @@ export default function FlyListScreen(props) {
   );
 
   return (
-    <div className='lg:px-36 lg:m-4 '>
+    <div className='lg:px-36 lg:m-4  pt-5'>
       {filteredDepartureLegs.map((leg, i) => {
         return (
           <FlyList
@@ -44,6 +51,9 @@ export default function FlyListScreen(props) {
             price={leg.priceDetail.basePrice.amount}
             currency={leg.priceDetail.basePrice.currency}
             date={leg.flightDate}
+            depPort={leg.depPort}
+            arrPort={leg.arrPort}
+            ports={Ports}
           />
         );
       })}
@@ -58,6 +68,9 @@ export default function FlyListScreen(props) {
             price={leg.priceDetail.basePrice.amount}
             currency={leg.priceDetail.basePrice.currency}
             date={leg.flightDate}
+            depPort={leg.depPort}
+            arrPort={leg.arrPort}
+            Ports={Ports}
           />
         );
       })}

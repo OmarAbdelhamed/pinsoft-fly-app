@@ -5,16 +5,19 @@ module.exports = {
     extend: {
       backgroundImage: {
         first: "url('/src/assets/img/status.jpg')",
+        second: "url('/src/assets/img/details.png')",
       },
       fontFamily: {
-        ticket: "VT323",
+        ticket: 'VT323',
+        Headlines: ['Rajdhani', 'sans-serif'],
       },
       colors: {
-        'primary-color': '#3d5cb8',
-        'primary-color-dark': '#334c99',
+        'primary-color': '#1A0F82',
+        'primary-color-light': '#2f20ba',
+        'primary-color-dark': '#1a0f39',
         'text-dark': '#0f172a',
         'text-light': '#64748b',
-        'extra-light': '#f1f5f9',
+        'extra-light': '#F2F7F7',
         white: '#ffffff',
       },
     },
