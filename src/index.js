@@ -9,6 +9,7 @@ import FlyListScreen from './screens/FlyListScreen';
 import HomeScreen from './screens/HomeScreen';
 import Header from './components/UI/Header';
 import FlyTicketScreen from './screens/FlyTicketScreen';
+import LoginScreen from './screens/LoginScreen';
 import FlyingDetailScreen from './screens/FlyingDetailScreen';
 
 const router = createBrowserRouter([
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
     element: <FlyTicketScreen />,
   },
   {
-    path: '*',
+    path: "/login",
+    element: <LoginScreen />
+  },
+  {
+    path: "*",
     element: (
       <div className=' flex flex-col items-center'>
         <h1 className=' text-3xl mt-8  lg:text-5xl font-bold'>
