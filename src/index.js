@@ -9,6 +9,7 @@ import FlyListScreen from "./screens/FlyListScreen";
 import HomeScreen from './screens/HomeScreen';
 import Header from './components/UI/Header';
 import FlyTicketScreen from './screens/FlyTicketScreen';
+import LoginScreen from './screens/LoginScreen';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/ticket",
     element: <FlyTicketScreen />,
+  },
+  {
+    path: "/login",
+    element: <LoginScreen />
   },
   {
     path: "*",
