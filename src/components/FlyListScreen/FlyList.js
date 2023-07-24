@@ -38,14 +38,13 @@ export default function FlyList({
           </tr>
         </thead>
         <tbody>
-          <tr className='text-center'>
-            <td className='p-2'>{airline}</td>
-            <td className='p-2'>{flightNo}</td>
-            <td className='p-2'>{depTime}</td>
-            <td className='p-2'>{sure}</td>
-            <td className='p-2'>{arrTime}</td>
-            <td className='p-2'>{`${price} ${currency}`}</td>
-            <td className='p-2'>{date}</td>
+          <tr className="text-center">
+            <td className="p-2">rewrtwet</td>
+            <td className="p-2">{flightNo}</td>
+            <td className="p-2">{depTime}</td>
+            <td className="p-2">{sure}</td>
+            <td className="p-2">{arrTime}</td>
+            <td className="p-2">{`${price} ${currency}`}</td>
           </tr>
         </tbody>
       </table>
