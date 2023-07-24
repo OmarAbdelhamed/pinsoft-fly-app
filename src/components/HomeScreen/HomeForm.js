@@ -3,7 +3,11 @@ import Select from "react-select";
 import FlyListScreen from "../../screens/FlyListScreen";
 import WarningPopUp from "./WarningPopUp";
 import { useDispatch, useSelector } from "react-redux";
-import { getPorts } from "../../app/flyDataSlice";
+import {
+  getPorts,
+  getDepartureLegs,
+  getReturnLegs,
+} from "../../app/flyDataSlice";
 
 const HomeForm = () => {
   const [ticketType, setTicketType] = useState("");
@@ -15,6 +19,11 @@ const HomeForm = () => {
   const [childCount, setChildCount] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
+  const [filteredDepartureLegs, setFilteredDepartureLegs] = useState([]);
+  const [filteredReturnLegs, setFilteredReturnLegs] = useState([]);
+
+  const departureLegs = useSelector((state) => state.data.departureLegs);
+  const returnLegs = useSelector((state) => state.data.returnLegs);
 
   //passengers dropdown starts here
   const popupRef = useRef();
@@ -57,6 +66,14 @@ const HomeForm = () => {
 
   useEffect(() => {
     dispatch(getPorts());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getDepartureLegs());
+  }, []);
+
+  useEffect(() => {
+    dispatch(getReturnLegs());
   }, []);
 
   const customStyles = {
@@ -107,6 +124,23 @@ const HomeForm = () => {
     if (!selectedOptionFrom || !selectedOptionTo || !selectedDate) {
       setShowWarning(true);
     } else {
+      const filteredDepLegs = departureLegs.filter(
+        (leg) =>
+          leg.depPort === selectedOptionFrom.value &&
+          leg.arrPort === selectedOptionTo.value &&
+          leg.flightDate === selectedDate
+      );
+
+      const filteredRetLegs = returnLegs.filter(
+        (leg) =>
+          leg.depPort === selectedOptionFrom.value &&
+          leg.arrPort === selectedOptionTo.value &&
+          leg.flightDate === selectedDate
+      );
+
+      setFilteredDepartureLegs(filteredDepLegs);
+      setFilteredReturnLegs(filteredRetLegs);
+
       setIsSearch(true);
     }
   };
@@ -305,9 +339,9 @@ const HomeForm = () => {
       {isSearch && (
         <div className="bg-[#d9d9d9] w-[360px] rounded py-4 my-3 px-2  lg:w-auto mx-auto backdrop-blur-sm bg-white/30 mt-[100px]">
           <FlyListScreen
-            from={selectedOptionFrom}
-            to={selectedOptionTo}
-            Date={selectedDate}
+            filteredDepartureLegs={filteredDepartureLegs}
+            filteredReturnLegs={filteredReturnLegs}
+            Ports={portList}
           />
         </div>
       )}
