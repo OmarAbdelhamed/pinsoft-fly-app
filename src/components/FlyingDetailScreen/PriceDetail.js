@@ -3,7 +3,7 @@ import React from "react";
 const PriceDetail = () => {
   return (
     <div className="flex flex-col">
-      <h2 className="text-2xl font-semibold mb-4 text-center">Price Details</h2>
+      <h2 className="text-3xl font-semibold mb-4 text-center font-Headlines">Price Details</h2>
       <div>
         <table className=" text-left w-[600px] ">
           <thead>

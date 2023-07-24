@@ -13,7 +13,7 @@ const BillDetail = () => {
 
   return (
     <div className=''>
-      <h2 className='text-2xl text-center font-bold mb-4 font-Headlines'>
+      <h2 className='text-4xl text-center font-bold mb-4 font-Headlines'>
         Billing Information
       </h2>
       <div className='mb-4'>
@@ -55,7 +55,7 @@ const BillDetail = () => {
         <label htmlFor='tcdegilim'>Im not a Turkish citizen</label>
       </div>
       <div>
-        <h2 className='text-2xl font-semibold mb-6'>Billing Address</h2>
+        <h2 className='text-3xl font-semibold mb-6 text-center font-Headlines'>Billing Address</h2>
         <form>
           <div className='mb-4'>
             <label
