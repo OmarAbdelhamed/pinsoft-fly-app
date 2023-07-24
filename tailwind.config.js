@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         first: "url('/src/assets/img/status.jpg')",
+        second: "url('/src/assets/img/details.png')",
       },
       fontFamily: {
         ticket: 'VT323',
@@ -12,6 +13,7 @@ module.exports = {
       },
       colors: {
         'primary-color': '#1A0F82',
+        'primary-color-light': '#2f20ba',
         'primary-color-dark': '#1a0f39',
         'text-dark': '#0f172a',
         'text-light': '#64748b',

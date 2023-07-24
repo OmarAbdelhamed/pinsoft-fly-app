@@ -29,7 +29,7 @@ const HomeScreen = () => {
           <MdArrowDropDownCircle className='relative top-10 h-[75px] w-[75px] text-primary-color-dark animate-bounce' />
         </a>
       </header>
-      <div className='bg-first bg-cover bg-fixed  min-h-[100hv]'>
+      <div className='bg-first bg-cover bg-fixed  '>
         <div
           id='book'
           className=' lg:px-[100px] relative min-h-[920px] flex flex-col items-center justify-center gap-[140px]'
