@@ -6,6 +6,7 @@ module.exports = {
       backgroundImage: {
         first: "url('/src/assets/img/status.jpg')",
         second: "url('/src/assets/img/details.png')",
+        third: "url('/src/assets/img/wallpaperflare.com_wallpaper.jpg')",
       },
       fontFamily: {
         ticket: 'VT323',

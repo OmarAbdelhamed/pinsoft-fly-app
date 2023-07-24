@@ -1,43 +1,52 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import { store } from "./app/store";
-import { Provider } from "react-redux";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { store } from './app/store';
+import { Provider } from 'react-redux';
 //router
-import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
-import HomeScreen from "./screens/HomeScreen";
-import Header from "./components/UI/Header";
-import FlyTicketScreen from "./screens/FlyTicketScreen";
-import LoginScreen from "./screens/LoginScreen";
-import FlyingDetailScreen from "./screens/FlyingDetailScreen";
+import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
+import HomeScreen from './screens/HomeScreen';
+import Header from './components/UI/Header';
+import FlyTicketScreen from './screens/FlyTicketScreen';
+import LoginScreen from './screens/LoginScreen';
+import FlyingDetailScreen from './screens/FlyingDetailScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/home',
     element: <HomeScreen />,
   },
   {
-    path: "/Details",
-    element: <FlyingDetailScreen />,
-  },
-  {
-    path: "/ticket",
-    element: <FlyTicketScreen />,
-  },
-  {
-    path: "/login",
+    path: '/',
     element: <LoginScreen />,
   },
   {
-    path: "*",
+    path: '/Details',
+    element: <FlyingDetailScreen />,
+  },
+  {
+    path: '/ticket',
+    element: <FlyTicketScreen />,
+  },
+  {
+    path: '/login',
+    element: <LoginScreen />,
+  },
+  {
+    path: '/register',
+    element: <RegisterScreen />,
+  },
+  {
+    path: '*',
     element: (
-      <div className=" flex flex-col items-center">
-        <h1 className=" text-3xl mt-8  lg:text-5xl font-bold">
+      <div className=' flex flex-col items-center'>
+        <h1 className=' text-3xl mt-8  lg:text-5xl font-bold'>
           404 page not found
         </h1>
         <Link
-          className="text-white bg-red-400 text-2xl mt-8 rounded-xl px-4 py-2"
-          to="/"
+          className='text-white bg-red-400 text-2xl mt-8 rounded-xl px-4 py-2'
+          to='/login'
         >
           Homepage
         </Link>
@@ -46,7 +55,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <Header />
