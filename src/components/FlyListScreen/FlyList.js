@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { SiChinasouthernairlines } from "react-icons/si";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addSelectedDepFlight,
+  addSelectedRetFlight,
+} from "../../app/flyDataSlice";
 export default function FlyList({
   flightNo,
   depTime,
@@ -29,15 +34,19 @@ export default function FlyList({
   const farkSaat = Math.floor(farkMilisaniye / (1000 * 60 * 60));
   const farkDakika = Math.floor((farkMilisaniye / (1000 * 60)) % 60);
   const sure = `${farkSaat} sa ${farkDakika} dk`;
-  console.log(farkMilisaniye);
+
+  const dispatch = useDispatch();
 
   const handleSelection = () => {
     if (type === "dep") {
       setSelectedDepFlight(leg);
+      dispatch(addSelectedDepFlight(leg));
     } else {
       setSelectedRetFlight(leg);
+      dispatch(addSelectedRetFlight(leg));
     }
   };
+
   return (
     <div
       onClick={handleSelection}
