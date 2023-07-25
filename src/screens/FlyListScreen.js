@@ -9,6 +9,7 @@ export default function FlyListScreen(props) {
         return (
           <FlyList
             key={i}
+            type ="depLeg"
             leg = {leg}
             airline={leg.airline}
             flightNo={leg.flightNo}
@@ -30,6 +31,7 @@ export default function FlyListScreen(props) {
           <>
             <FlyList
               key={i}
+              type = "returnLeg"
               airline={leg.airline}
               flightNo={leg.flightNo}
               depTime={leg.depTime}

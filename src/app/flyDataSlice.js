@@ -5,7 +5,8 @@ const initialState = {
   departureLegs: [], // buraya json web servara yüklenen datamız gelecek.
   returnLegs: [],
   ports: [],
-  selectedLeg: []
+  selectedDepLeg: [],
+  selectedReturnLeg: []
 };
 
 export const getDepartureLegs = createAsyncThunk("getDepartures", async () => {
@@ -26,8 +27,12 @@ export const flyDataSlice = createSlice({
   name: "flydata",
   initialState,
   reducers: {
-    addSelectedLeg: (state , action) => {
-      state.selectedLeg = action.payload
+    addSelectedDepLeg: (state , action) => {
+      state.selectedDepLeg = action.payload
+    },
+    addSelectedReturnLeg : (state , action )=>{
+      state.selectedReturnLeg = action.payload
+
     }
   },
   extraReducers: (builder) => {
@@ -44,6 +49,6 @@ export const flyDataSlice = createSlice({
   },
 });
 
-export const {addSelectedLeg} = flyDataSlice.actions
+export const {addSelectedDepLeg , addSelectedReturnLeg} = flyDataSlice.actions
 
 export default flyDataSlice.reducer;

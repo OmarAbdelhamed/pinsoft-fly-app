@@ -3,7 +3,7 @@ import { SiChinasouthernairlines } from "react-icons/si";
 import { useNavigate } from "react-router";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
-import { addSelectedLeg } from "../../app/flyDataSlice";
+import { addSelectedDepLeg , addSelectedReturnLeg } from "../../app/flyDataSlice";
 
 export default function FlyList({
   flightNo,
@@ -15,6 +15,7 @@ export default function FlyList({
   depPort,
   arrPort,
   leg,
+  type
 }) {
 
   const [selectedLeg , setSelectedLeg] = useState([])
@@ -48,7 +49,12 @@ export default function FlyList({
 
   function legHandler(){
     nextPageHandler();
-    dispatch(addSelectedLeg(leg))
+    if(type == "depLeg"){
+      dispatch(addSelectedDepLeg(leg))
+    }else {
+      // dispatch(addSelectedReturnLeg(leg))
+      console.log(leg);
+    }
   }
 
   return (
