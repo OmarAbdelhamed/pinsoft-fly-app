@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import FlyList from "../components/FlyListScreen/FlyList";
 
 export default function FlyListScreen(props) {
@@ -7,6 +9,7 @@ export default function FlyListScreen(props) {
         return (
           <FlyList
             key={i}
+            leg = {leg}
             airline={leg.airline}
             flightNo={leg.flightNo}
             depTime={leg.depTime}

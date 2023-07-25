@@ -10,10 +10,16 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import AnimatedComp from '../components/UI/AnimatedComp';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 import { AnimatePresence } from 'framer-motion';
+import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+
 
 const FlyingDetailScreen = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [previousStep, setPreviousStep] = useState(0);
+
+  const selectedLeg = useSelector(state => state.data.selectedLeg)
+  console.log(selectedLeg);
+  
 
   const navigate = useNavigate();
 
