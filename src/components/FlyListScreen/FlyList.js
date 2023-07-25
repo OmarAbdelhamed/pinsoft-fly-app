@@ -20,9 +20,6 @@ export default function FlyList({
   const [depTimeSaat, depTimeDakika] = depTime.split(":");
   const [arrTimeSaat, arrTimeDakika] = arrTime.split(":");
 
-  const [selectedDepFlight, setSelectedDepFlight] = useState();
-  const [selectedRetFlight, setSelectedRetFlight] = useState();
-
   const depTarih = new Date();
   depTarih.setHours(depTimeSaat, depTimeDakika, 0);
 
@@ -39,10 +36,8 @@ export default function FlyList({
 
   const handleSelection = () => {
     if (type === "dep") {
-      setSelectedDepFlight(leg);
       dispatch(addSelectedDepFlight(leg));
     } else {
-      setSelectedRetFlight(leg);
       dispatch(addSelectedRetFlight(leg));
     }
   };
