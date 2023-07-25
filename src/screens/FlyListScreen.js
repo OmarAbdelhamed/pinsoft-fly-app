@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import FlyList from '../components/FlyListScreen/FlyList';
 
 export default function FlyListScreen(props) {
+  const navigate = useNavigate();
+
+  const nextPageHandler = () => {
+    navigate("/Details");
+  };
   return (
     <div className='lg:px-36 lg:m-4  pt-5'>
       {props.filteredDepartureLegs.map((leg, i) => {
