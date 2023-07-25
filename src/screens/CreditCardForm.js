@@ -13,8 +13,25 @@ const CreditCardForm = () => {
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
+    if (name === "name") {
+      const cleanedValue = value.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
+      setState((prev) => ({ ...prev, [name]: cleanedValue }));
+    } else if (name === "expiry") {
+      const cleanedValue = value.replace(/\D/g, ""); 
+      const formattedValue = cleanedValue.slice(0, 4).replace(/(\d{2})/, "$1/"); 
+      setState((prev) => ({ ...prev, [name]: formattedValue }));
+    } else if (name ==="number"){
+      const cleanedValue = value.replace(/\D/g, "");
+      const truncatedValue = cleanedValue.slice(0, 16);
+      const formattedValue = truncatedValue.replace(/(\d{4})/g, "$1 ").trim();
+      setState((prev) => ({ ...prev, [name]: formattedValue }));
+    } else {
+      const cleanedValue = value.replace(/\D/g, "");
+      const truncatedValue = cleanedValue.slice(0, 3);
+      const formattedValue = truncatedValue.replace(/(\d{3})/g, "$1 ").trim();
+      setState((prev) => ({ ...prev, [name]: formattedValue }));
 
-    setState((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleInputFocus = (evt) => {
@@ -41,6 +58,7 @@ const CreditCardForm = () => {
             required
             onChange={handleInputChange}
             onFocus={handleInputFocus}
+            value={state.number}
           />
         </div>
         <div className=' mb-3 '>
@@ -52,6 +70,7 @@ const CreditCardForm = () => {
             required
             onChange={handleInputChange}
             onFocus={handleInputFocus}
+            value={state.name}
           />
         </div>
         <div className='mb-3 '>
@@ -65,6 +84,7 @@ const CreditCardForm = () => {
               required
               onChange={handleInputChange}
               onFocus={handleInputFocus}
+              value={state.expiry}
             />
           </div>
           <div className='col-6 mb-1 mt-3 '>
@@ -77,6 +97,7 @@ const CreditCardForm = () => {
               required
               onChange={handleInputChange}
               onFocus={handleInputFocus}
+              value={state.cvc}
             />
           </div>
         </div>

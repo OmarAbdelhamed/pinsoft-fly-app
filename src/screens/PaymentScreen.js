@@ -4,22 +4,32 @@ import 'react-datepicker/dist/react-datepicker.css';
 import CreditCardForm from './CreditCardForm';
 
 const PaymentScreen = () => {
-  const [cardNumber, setCardNumber] = useState('');
-  const [iban, setIban] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCVC] = useState('');
-  const [nameSurname, setNameSurname] = useState('');
-  const [installments, setInstallments] = useState('');
-
+  const [cardNumber, setCardNumber] = useState("");
+  const [iban, setIban] = useState("");
+  const [expiry, setExpiry] = useState("");
+  const [cvc, setCVC] = useState("");
+  const [nameSurname, setNameSurname] = useState("");
+  const [installments, setInstallments] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [paymentOption, setPaymentOption] = useState('');
+  const [paymentOption, setPaymentOption] = useState("");
+  const [accountNumber,setAccountNumber] =useState("");
 
   const handleCardNumberChange = (event) => {
     setCardNumber(event.target.value);
   };
 
   const handleIbanChange = (event) => {
-    setIban(event.target.value);
+    const inputValue = event.target.value;
+    const numericValue = inputValue.replace(/\D/g, '');
+    const formattedValue = numericValue.replace(/(\d{1,2})(\d{1,4})(\d{1,4})(\d{1,4})(\d{1,4})(\d{1,4})(\d{1,4})(\d{1,2})/, "TR$1 $2 $3 $4 $5 $6 $7 $8").trim();
+    setIban(formattedValue.slice(0,33));
+  };
+
+  const handleAccountNumber = (event) => {
+    const inputValue = event.target.value;
+    const numericValue = inputValue.replace(/\D/g, '');
+    const formattedValue = numericValue.replace(/(\d{1,2})/, "$1").trim();
+    setAccountNumber(formattedValue.slice(0,10));
   };
 
   const handleExpiryChange = (event) => {
@@ -31,7 +41,9 @@ const PaymentScreen = () => {
   };
 
   const handleNameSurnameChange = (event) => {
-    setNameSurname(event.target.value);
+    const inputValue = event.target.value;
+    const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
+    setNameSurname(alphabeticValue);
   };
 
   const handleInstallmentChange = (event) => {
@@ -126,8 +138,8 @@ const PaymentScreen = () => {
                 <label>Account Number</label>
                 <input
                   type='text'
-                  value={iban}
-                  onChange={handleIbanChange}
+                  value={accountNumber}
+                  onChange={handleAccountNumber}
                   className='border border-gray-300 rounded-lg p-2 w-full mb-4'
                 />
                 <div className='name-surname-details'>
