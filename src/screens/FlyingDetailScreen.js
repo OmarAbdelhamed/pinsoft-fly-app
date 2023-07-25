@@ -26,6 +26,9 @@ const FlyingDetailScreen = () => {
   const goBackHandler = () => {
     navigate('/home');
   };
+  const NextPageHandler = () => {
+    navigate('/Payment');
+  };
 
   const handleNext = () => {
     setPreviousStep(currentStep);
@@ -80,6 +83,15 @@ const FlyingDetailScreen = () => {
                       className='bg-primary-color p-2 text-white rounded-md m-1 flex flex-row items-center gap-1 hover:scale-[105%] hover:bg-primary-color-light'
                     >
                       Next
+                      <AiOutlineArrowRight />
+                    </button>
+                  )}
+                  {currentStep === 6 && (
+                    <button
+                      onClick={NextPageHandler}
+                      className='bg-primary-color p-2 text-white rounded-md m-1 flex flex-row items-center gap-1 hover:scale-[105%] hover:bg-primary-color-light'
+                    >
+                      Go to payment
                       <AiOutlineArrowRight />
                     </button>
                   )}

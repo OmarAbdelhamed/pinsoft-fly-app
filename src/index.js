@@ -11,6 +11,8 @@ import FlyTicketScreen from './screens/FlyTicketScreen';
 import LoginScreen from './screens/LoginScreen';
 import FlyingDetailScreen from './screens/FlyingDetailScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import PaymentScreen from './screens/PaymentScreen';
+import UserProfileScreen from './screens/UserProfileScreen';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: '/register',
     element: <RegisterScreen />,
+  },
+  {
+    path: '/payment',
+    element: <PaymentScreen />,
+  },
+  {
+    path: '/profile',
+    element: <UserProfileScreen />,
   },
   {
     path: '*',
