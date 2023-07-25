@@ -16,11 +16,11 @@ body {
 
 input[type='tel']:focus ~ .input-text,
 input[type='tel']:not(:placeholder-shown) ~ .input-text {
-  @apply text-black transform -translate-y-5 -translate-x-5 scale-75;
+  @apply text-black transform -translate-y-0 -translate-x-[160px] scale-75;
 }
 input[type='email']:focus ~ .input-text,
 input[type='email']:not(:placeholder-shown) ~ .input-text {
-  @apply text-black transform -translate-y-5 -translate-x-1 scale-75;
+  @apply text-black transform -translate-y-0 -translate-x-[70px] scale-75;
 }
 input[type='number']:focus ~ .input-text,
 input[type='number']:not(:placeholder-shown) ~ .input-text {
@@ -32,7 +32,7 @@ input[type='text']:not(:placeholder-shown) ~ .input-text {
 }
 input[type='password']:focus ~ .input-text,
 input[type='password']:not(:placeholder-shown) ~ .input-text {
-  @apply text-black transform -translate-y-5 -translate-x-1 scale-75;
+  @apply text-black transform -translate-y-0 -translate-x-[105px] scale-75;
 }
 
 @keyframes slideInFromLeft {
