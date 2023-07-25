@@ -8,10 +8,10 @@ function FlyTicketInsurance() {
     };
 
     return (
-        <div className="items-center justify-center ">
-            <div className="border border-black p-10 relative">
-                <h2 className="text-xl font-bold mb-4">Uçak Bileti Sigortası</h2>
-                <div className="mb-4 flex items-center cursor-pointer">
+        <div className="">
+            <div className=" flex flex-col justify-center items-center py-10 pb-10 relative w-[600px] ">
+                <h2 className="text-3xl font-bold mb-4 font-Headlines ">Flight Insurance</h2>
+                <div className="mb-4 flex items-center justify-center cursor-pointer">
                     <div
                         className={`w-4 h-4 mr-2 border border-gray-400 rounded-full flex-shrink-0 focus:outline-none ${isInsuranceSelected ? 'bg-blue-500 border-blue-500' : ''
                             }`}
@@ -25,10 +25,10 @@ function FlyTicketInsurance() {
                         htmlFor="sigorta"
                         className={`text-black ${isInsuranceSelected ? 'text-blue-500 ' : ''}`}
                     >
-                        Sigorta yaptırmak istiyorum
+                        I want to Include an Insurance
                     </label>
                 </div>
-                <div className="absolute bottom-0 right-0 flex items-center">
+                <div className="absolute bottom-0 right-0 m-2 flex items-center">
                     <p className="text-sm mr-2">
                         (2 Kg) Toplam Fiyat =
                     </p>

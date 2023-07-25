@@ -78,7 +78,7 @@ const Header = () => {
       <nav
         className={`max-w-auto m-auto pl-10 md:px-[175px] py-4 flex items-center justify-between text-center sticky left-0 top-0 right-0  ${
           !top && `bg-white shadow-lg`
-        } sm:px-[265px] lg:px-[300px] z-20  `}
+        } sm:px-[265px] lg:px-[300px] z-[1000]  `}
       >
         <div className='text-[1.5rem] font-semibold justify-center items-center gap-1 text-primary-color-dark flex flex-row'>
           <GiLibertyWing className='' />

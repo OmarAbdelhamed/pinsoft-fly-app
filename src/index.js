@@ -5,17 +5,21 @@ import { store } from './app/store';
 import { Provider } from 'react-redux';
 //router
 import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
-import FlyListScreen from './screens/FlyListScreen';
 import HomeScreen from './screens/HomeScreen';
 import Header from './components/UI/Header';
 import FlyTicketScreen from './screens/FlyTicketScreen';
 import LoginScreen from './screens/LoginScreen';
 import FlyingDetailScreen from './screens/FlyingDetailScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/home',
     element: <HomeScreen />,
+  },
+  {
+    path: '/',
+    element: <LoginScreen />,
   },
   {
     path: '/Details',
@@ -26,11 +30,15 @@ const router = createBrowserRouter([
     element: <FlyTicketScreen />,
   },
   {
-    path: "/login",
-    element: <LoginScreen />
+    path: '/login',
+    element: <LoginScreen />,
   },
   {
-    path: "*",
+    path: '/register',
+    element: <RegisterScreen />,
+  },
+  {
+    path: '*',
     element: (
       <div className=' flex flex-col items-center'>
         <h1 className=' text-3xl mt-8  lg:text-5xl font-bold'>
@@ -38,7 +46,7 @@ const router = createBrowserRouter([
         </h1>
         <Link
           className='text-white bg-red-400 text-2xl mt-8 rounded-xl px-4 py-2'
-          to='/'
+          to='/login'
         >
           Homepage
         </Link>
