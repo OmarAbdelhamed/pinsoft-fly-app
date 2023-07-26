@@ -80,6 +80,7 @@ const RegisterScreen = () => {
 
   return (
     <>
+    <div className='absolute mt-[89px]  top-0 left-0 w-full h-[850px] backdrop-blur-sm bg-black/30'></div>
       <div className='bg-third bg-cover bg-fixed bg-no-repeat min-h-[90.6vh] flex items-center justify-center '>
         <AnimatePresence mode='wait'>
           <AnimatedRoute>
