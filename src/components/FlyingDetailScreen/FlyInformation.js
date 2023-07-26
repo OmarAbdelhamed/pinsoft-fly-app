@@ -17,28 +17,28 @@ const FlyInformation = () => {
         </div>
         <div className='flex flex-row justify-between items-center relative -left-[50px]'>
           <div className=' flex flex-col text-2xl gap-4 text-right'>
-            <span>{selectedFlight.arrTime}</span>
+            <span>{selectedFlight.depTime}</span>
             <span>{selectedFlight.depPort}</span>
-            <span className='-mt-4 text-lg text-slate-600'>DUS</span>
+            <span className='-mt-4 text-lg text-slate-600'>{selectedFlight.depPort}</span>
           </div>
           <div className='flex flex-col gap-1 mx-4'>
-            <div>4:30:00</div>
+            <div>{selectedFlight.flightDate}</div>
             <div className='items-center text-center relative '>
               <span className='  after:content-[""] after:w-[8px] after:absolute after:-right-[0.01rem] after:top-[1.29rem] after:h-[1px] after:block after:bg-black  after:-rotate-45 before:content-[""] before:w-[8px] before:absolute before:-right-[0.01rem] before:top-[0.86rem] before:h-[1px] before:block before:bg-black  before:rotate-45   '>
                 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
               </span>
             </div>
-            <div>XQ 185 </div>
+            <div>{selectedFlight.airlineCode} </div>
           </div>
           <div className=' flex flex-col text-2xl gap-4 text-left'>
-            <span>12:30</span>
-            <span>Antalya</span>
-            <span className='-mt-4 text-lg text-slate-600'>AYT</span>
+            <span>{selectedFlight.arrTime}</span>
+            <span>{selectedFlight.arrPort}</span>
+            <span className='-mt-4 text-lg text-slate-600'>{selectedFlight.arrPort}</span>
           </div>
         </div>
 
         <div className='text-3xl w-auto h-auto'>
-          3999.99 <span className='text-xl'>EUR</span>
+          {selectedFlight.passengerPrices[0].priceDetail.basePrice.amount} <span className='text-xl'>EUR</span>
         </div>
       </div>
     </>

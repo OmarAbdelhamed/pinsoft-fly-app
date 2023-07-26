@@ -1,7 +1,16 @@
 import FlyList from "../components/FlyListScreen/FlyList";
 import { useNavigate } from "react-router";
+import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 export default function FlyListScreen(props) {
   const navigate = useNavigate();
+
+  const selectedDepFlight = useSelector(
+    (state) => state.data.selectedDepFlight
+  );
+  const selectedRetFlight = useSelector(
+    (state) => state.data.selectedRetFlight
+  );
 
   const nextPageHandler = () => {
     navigate("/Details");
@@ -9,6 +18,20 @@ export default function FlyListScreen(props) {
   return (
     <>
       <div className="lg:px-36 lg:m-4  pt-5">
+        <div>
+          {selectedDepFlight !== undefined && (
+            <div className="flex items-center">
+              <BsFillArrowLeftCircleFill color="white" size={24} />
+              <button onClick={props.handleSearchClick} className="text-left text-white font-bold text-xl ml-2">
+                Change trip
+              </button>
+            </div>
+          )}
+          <h2 className="text-center text-4xl  mb-[50px] ">
+            Departure Flights
+          </h2>
+        </div>
+
         {props.filteredDepartureLegs.map((leg, i) => {
           return (
             <FlyList
