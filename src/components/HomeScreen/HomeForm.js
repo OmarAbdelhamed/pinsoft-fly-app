@@ -124,7 +124,7 @@ const HomeForm = () => {
     setShowWarning(false);
   };
 
-  const handleSearchClick = () => {
+  const handleSearchClick = () => { // useselectorla erişicez eğer varsa sadece arrayı döndüreceğiz
     if (!selectedOptionFrom || !selectedOptionTo || !selectedDate) {
       setShowWarning(true);
     } else {
