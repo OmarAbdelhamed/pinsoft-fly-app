@@ -1,7 +1,5 @@
 import React from "react";
-import Footer from "../UI/footer";
 import planeIcon from "../../assets/img/TicketAirplane.png";
-
 import "@fontsource/vt323";
 
 const Ticket = (prop) => {
@@ -194,9 +192,6 @@ const Ticket = (prop) => {
             <div className="col-start-1 sm:col-span-4 md:col-span-3 sm:border-none md:border-r-4 md:border-dashed md:border-[#ffd1dd]"></div>
           </div>
         </div>
-      </div>
-      <div className="mt-20">
-        <Footer />
       </div>
     </div>
   );
