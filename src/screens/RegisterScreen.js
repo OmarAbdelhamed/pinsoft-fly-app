@@ -71,16 +71,14 @@ const RegisterScreen = () => {
         password,
       });
     }
+    const submitHandler = () => {
+      navigate('/login');
+    };
   };
   const navigate = useNavigate();
-
-  const submitHandler = () => {
-    navigate('/login');
-  };
-
   return (
     <>
-    <div className='absolute mt-[89px]  top-0 left-0 w-full h-[850px] backdrop-blur-sm bg-black/30'></div>
+      <div className='absolute mt-[89px]  top-0 left-0 w-full h-[850px] backdrop-blur-sm bg-black/30'></div>
       <div className='bg-third bg-cover bg-fixed bg-no-repeat min-h-[90.6vh] flex items-center justify-center '>
         <AnimatePresence mode='wait'>
           <AnimatedRoute>
@@ -171,7 +169,7 @@ const RegisterScreen = () => {
                   </div>
                   <button
                     type='submit'
-                    onClick={submitHandler}
+                    onClick={handleSubmit}
                     className='w-full px-4 py-2  bg-primary-color text-white rounded-lg  hover:scale-[105%] hover:bg-primary-color-light'
                   >
                     Register

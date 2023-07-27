@@ -162,7 +162,7 @@ const HomeForm = () => {
         <h2 className='text-5xl font-bold mb-4 text-center text-gray-100 font-Headlines'>
           Search for Flights
         </h2>
-        <form className='grid grid-flow-row px-4 grid-cols-6 grid-rows-2 items-center lg:gap-6 max-w-auto mb-4 bg-transparent place-items-center  '>
+        <form className='grid grid-flow-row px-4 grid-cols-4 grid-rows-2 items-center lg:gap-6 max-w-auto mb-4 bg-transparent place-items-center  '>
           <label htmlFor='trip' className='font-Headlines text-gray-700'>
             Trip Type:
             <Select
@@ -172,6 +172,7 @@ const HomeForm = () => {
               placeholder='Please select your trip type'
               value={ticketType}
               required
+              className=' row-start-1'
               onChange={ticketTypeHandler}
               styles={customStyles}
             ></Select>
@@ -184,6 +185,7 @@ const HomeForm = () => {
               options={filteredOptionsFrom}
               placeholder='select your destination'
               value={selectedOptionFrom}
+              className='row-start-2'
               onChange={handleSelectFrom}
               isSearchable={true}
               styles={customStyles}
@@ -197,6 +199,7 @@ const HomeForm = () => {
               options={filteredOptionsTo}
               placeholder='select your destination'
               value={selectedOptionTo}
+              className='row-start-3 col-start-1'
               onChange={handleSelectTo}
               isSearchable={true}
               styles={customStyles}
@@ -213,7 +216,7 @@ const HomeForm = () => {
                 handleSelectedDate(event);
               }}
               required
-              className='border border-gray-300 rounded-md p-2 min-w-[255px]'
+              className='border border-gray-300 rounded-md p-2 min-w-[257px]'
             />
           </label>
 
@@ -221,7 +224,7 @@ const HomeForm = () => {
             <>
               <label
                 htmlFor='returnDate'
-                className='font-Headlines text-gray-700'
+                className='font-Headlines ml-4 text-gray-700'
               >
                 Return Date:
                 <input
@@ -232,7 +235,7 @@ const HomeForm = () => {
                     handleSelectedReturnDate(event);
                   }}
                   required
-                  className='border border-gray-300 rounded-md p-2  min-w-[255px]'
+                  className='border border-gray-300 rounded-md p-2   min-w-[255px] '
                 />
               </label>
             </>
@@ -240,7 +243,7 @@ const HomeForm = () => {
             <>
               <label
                 htmlFor='returnDate'
-                className='font-Headlines text-gray-700'
+                className='font-Headlines ml-4 text-gray-700'
               >
                 Return Date:
                 <input
@@ -249,7 +252,7 @@ const HomeForm = () => {
                   placeholder='One Way'
                   name='returnDate'
                   disabled
-                  className='border border-gray-300 rounded-md p-2 min-w-[255px]'
+                  className='border border-gray-300 rounded-md p-2  min-w-[255px]'
                 />
               </label>
             </>
@@ -343,7 +346,7 @@ const HomeForm = () => {
 
           <button
             type='button'
-            className='bg-primary-color hover:bg-primary-color-dark transition ease-linear  text-white p-2 rounded-full min-w-[150px]  min-w-[300px] row-start-2 col-start-3 col-end-5'
+            className='bg-primary-color hover:bg-primary-color-dark transition ease-linear  text-white p-2 rounded-full  min-w-[300px] row-start-2 col-start-3 col-end-5'
             onClick={handleSearchClick}
           >
             Search
