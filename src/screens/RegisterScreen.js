@@ -78,8 +78,8 @@ const RegisterScreen = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className='absolute mt-[89px]  top-0 left-0 w-full h-[850px] backdrop-blur-sm bg-black/30'></div>
-      <div className='bg-third bg-cover bg-fixed bg-no-repeat min-h-[90.6vh] flex items-center justify-center '>
+      <div className='absolute mt-[89px]  top-0 left-0 w-full h-screen backdrop-blur-sm bg-black/30'></div>
+      <div className='bg-third bg-cover  bg-no-repeat min-h-screen flex items-center justify-center '>
         <AnimatePresence mode='wait'>
           <AnimatedRoute>
             <div className='flex justify-center items-center'>
