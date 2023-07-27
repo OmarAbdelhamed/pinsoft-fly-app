@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CreditCardForm from './CreditCardForm';
 import { useNavigate } from 'react-router';
+import Footer from '../components/UI/footer';
 
 const PaymentScreen = () => {
   const [cardNumber, setCardNumber] = useState('');
@@ -231,6 +232,7 @@ const PaymentScreen = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
