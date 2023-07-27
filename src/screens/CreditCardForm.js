@@ -13,24 +13,23 @@ const CreditCardForm = () => {
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
-    if (name === "name") {
+    if (name === 'name') {
       const cleanedValue = value.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
       setState((prev) => ({ ...prev, [name]: cleanedValue }));
-    } else if (name === "expiry") {
-      const cleanedValue = value.replace(/\D/g, ""); 
-      const formattedValue = cleanedValue.slice(0, 4).replace(/(\d{2})/, "$1/"); 
+    } else if (name === 'expiry') {
+      const cleanedValue = value.replace(/\D/g, '');
+      const formattedValue = cleanedValue.slice(0, 4).replace(/(\d{2})/, '$1/');
       setState((prev) => ({ ...prev, [name]: formattedValue }));
-    } else if (name ==="number"){
-      const cleanedValue = value.replace(/\D/g, "");
+    } else if (name === 'number') {
+      const cleanedValue = value.replace(/\D/g, '');
       const truncatedValue = cleanedValue.slice(0, 16);
-      const formattedValue = truncatedValue.replace(/(\d{4})/g, "$1 ").trim();
+      const formattedValue = truncatedValue.replace(/(\d{4})/g, '$1 ').trim();
       setState((prev) => ({ ...prev, [name]: formattedValue }));
     } else {
-      const cleanedValue = value.replace(/\D/g, "");
+      const cleanedValue = value.replace(/\D/g, '');
       const truncatedValue = cleanedValue.slice(0, 3);
-      const formattedValue = truncatedValue.replace(/(\d{3})/g, "$1 ").trim();
+      const formattedValue = truncatedValue.replace(/(\d{3})/g, '$1 ').trim();
       setState((prev) => ({ ...prev, [name]: formattedValue }));
-
     }
   };
 
@@ -46,8 +45,9 @@ const CreditCardForm = () => {
         cvc={state.cvc}
         name={state.name}
         focused={state.focus}
+        className
       />
-      <form className='flex flex-col items-center justify-center '>
+      <form className='grid grid-flow-row grid-cols-2 gap-2 place-content-center  items-center  '>
         <div className='  mb-3 mt-4 '>
           <input
             type='tel'
@@ -61,7 +61,7 @@ const CreditCardForm = () => {
             value={state.number}
           />
         </div>
-        <div className=' mb-3 '>
+        <div className=' mb-3 mt-4 '>
           <input
             type='text'
             name='name'
@@ -74,7 +74,7 @@ const CreditCardForm = () => {
           />
         </div>
         <div className='mb-3 '>
-          <div className='col-6'>
+          <div className=''>
             <input
               type='tel'
               name='expiry'
@@ -87,7 +87,7 @@ const CreditCardForm = () => {
               value={state.expiry}
             />
           </div>
-          <div className='col-6 mb-1 mt-3 '>
+          <div className=' mb-1 mt-3 '>
             <input
               type='tel'
               name='cvc'

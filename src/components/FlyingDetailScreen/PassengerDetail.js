@@ -12,7 +12,7 @@ const PassengerDetail = () => {
   };
 
   return (
-    <div>
+    <div className='border p-10 relative shadow-xl bg-white rounded-lg h-auto max-w-[1200px] flex flex-col justify-center items-center'>
       <h2 className='text-2xl font-bold mb-4 text-center'>Passenger Details</h2>
       <div className='w-[400px]'>
         <p>1. Passenger</p>
