@@ -91,7 +91,7 @@ const Header = () => {
                
                 <hr className='' />
                 <li className='menu-item hover:bg-[#23265f] hover:text-white m-1 rounded-lg'>
-                 <a href='/ticket'>
+                 <a href='/mytickets'>
                   <div className='flex flex-row items-center gap-1 px-2 py-2'>
                     <MdAirplaneTicket className='text-xl' />
                     <span>Tickets</span>
