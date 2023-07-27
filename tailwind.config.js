@@ -8,6 +8,7 @@ module.exports = {
         second: "url('/src/assets/img/details.png')",
         third: "url('/src/assets/img/wallpaperflare.com_wallpaper.jpg')",
         fourth: "url('/src/assets/img/sign.jpg')",
+        fifth: "url('/src/assets/img/CR-diy-push-pin-map-styled-6-1.jpg')",
       },
       fontFamily: {
         ticket: 'VT323',

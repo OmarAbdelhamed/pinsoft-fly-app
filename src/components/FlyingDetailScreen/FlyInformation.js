@@ -102,7 +102,7 @@ const FlyInformation = () => {
           </>
         )) || (
           <h1 className='text-xl font-bold  text-center text-slate-800 font-Headlines'>
-            Your did not select Round trip
+            You did not select a return Ticket
           </h1>
         )}
       </div>
