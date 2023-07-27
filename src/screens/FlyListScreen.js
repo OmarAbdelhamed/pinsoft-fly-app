@@ -20,7 +20,7 @@ export default function FlyListScreen(props) {
       <div className='lg:px-36 lg:m-4 text-center  pt-5'>
         <div>
           {selectedDepFlight !== undefined && (
-            <div className='flex items-center hover:-ml-2 hover:transition hover:ease-linear'>
+            <div className='flex items-center hover:-translate-x-4 hover:transition'>
               <BsFillArrowLeftCircleFill color='white' size={24} />
               <button
                 onClick={props.handleSearchClick}
@@ -31,7 +31,7 @@ export default function FlyListScreen(props) {
             </div>
           )}
           <h2 className='text-center text-4xl  mb-[50px] '>
-            Departure Flights
+            Choose Departure Flight
           </h2>
         </div>
         {props.filteredDepartureLegs.map((leg, i) => {
@@ -54,7 +54,9 @@ export default function FlyListScreen(props) {
         })}
         <br />
         <div className=''>
-          <h2 className='text-center text-4xl  mb-[50px] '>Return Flights</h2>
+          <h2 className='text-center text-4xl  mb-[50px] '>
+            Choose Return Flight
+          </h2>
           {props.filteredReturnLegs.map((leg, i) => {
             return (
               <>
@@ -78,7 +80,7 @@ export default function FlyListScreen(props) {
         </div>
         <button
           onClick={nextPageHandler}
-          className='bg-primary-color p-2 text-white rounded-md px-[100px]  hover:scale-[105%] hover:bg-primary-color-light'
+          className='bg-primary-color p-2 text-white rounded-md px-[100px]  hover:scale-[105%] hover:transition-all ease-linear hover:bg-primary-color-light'
         >
           Continue
         </button>{' '}
