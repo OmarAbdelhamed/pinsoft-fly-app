@@ -26,8 +26,22 @@ const HomeForm = () => {
   const departureLegs = useSelector((state) => state.data.departureLegs);
   const returnLegs = useSelector((state) => state.data.returnLegs);
 
+  const selectedDepFlight = useSelector(state => state.data.selectedDepFlight)
+  const selectedRetFlight = useSelector(state => state.data.selectedRetFlight)
+
   //passengers dropdown starts here
   const popupRef = useRef();
+
+  useEffect(()=>{
+    if(selectedDepFlight !== undefined){
+      setFilteredDepartureLegs([selectedDepFlight])
+    }
+  },[selectedDepFlight])
+  useEffect(()=>{
+    if(selectedRetFlight !== undefined){
+      setFilteredReturnLegs([selectedRetFlight])
+    }
+  },[selectedRetFlight])
 
   const incrementCount = (type) => {
     if (type === 'adult') {
@@ -360,6 +374,7 @@ const HomeForm = () => {
             filteredDepartureLegs={filteredDepartureLegs}
             filteredReturnLegs={filteredReturnLegs}
             Ports={portList}
+            handleSearchClick={handleSearchClick}
           />
         </div>
       )}

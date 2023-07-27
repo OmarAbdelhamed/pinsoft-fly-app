@@ -44,8 +44,6 @@ const FlyingDetailScreen = () => {
     setPreviousStep(currentStep);
     setCurrentStep((prevStep) => prevStep - 1);
   };
-  console.log(currentStep);
-  console.log(previousStep);
   return (
     <>
       <AnimatedRoute>
