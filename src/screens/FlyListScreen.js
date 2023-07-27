@@ -1,7 +1,7 @@
-import FlyList from "../components/FlyListScreen/FlyList";
-import { useNavigate } from "react-router";
-import { UseSelector, useSelector } from "react-redux/es/hooks/useSelector";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+import FlyList from '../components/FlyListScreen/FlyList';
+import { useNavigate } from 'react-router';
+import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 export default function FlyListScreen(props) {
   const navigate = useNavigate();
 
@@ -17,21 +17,23 @@ export default function FlyListScreen(props) {
   };
   return (
     <>
-      <div className="lg:px-36 lg:m-4  pt-5">
+      <div className='lg:px-36 lg:m-4 text-center  pt-5'>
         <div>
           {selectedDepFlight !== undefined && (
-            <div className="flex items-center">
-              <BsFillArrowLeftCircleFill color="white" size={24} />
-              <button onClick={props.handleSearchClick} className="text-left text-white font-bold text-xl ml-2">
+            <div className='flex items-center hover:-ml-2 hover:transition hover:ease-linear'>
+              <BsFillArrowLeftCircleFill color='white' size={24} />
+              <button
+                onClick={props.handleSearchClick}
+                className='text-left text-primary-color-dark font-bold text-xl ml-2'
+              >
                 Change trip
               </button>
             </div>
           )}
-          <h2 className="text-center text-4xl  mb-[50px] ">
+          <h2 className='text-center text-4xl  mb-[50px] '>
             Departure Flights
           </h2>
         </div>
-
         {props.filteredDepartureLegs.map((leg, i) => {
           return (
             <FlyList
@@ -74,7 +76,10 @@ export default function FlyListScreen(props) {
             );
           })}
         </div>
-        <button onClick={nextPageHandler} className=' text-center '>
+        <button
+          onClick={nextPageHandler}
+          className='bg-primary-color p-2 text-white rounded-md px-[100px]  hover:scale-[105%] hover:bg-primary-color-light'
+        >
           Continue
         </button>{' '}
       </div>
