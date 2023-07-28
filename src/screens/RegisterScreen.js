@@ -15,6 +15,11 @@ const RegisterScreen = () => {
   const [gender, setGender] = useState('');
   const [error, setError] = useState('');
 
+  const handleFirstnameChange = (e) => {
+    const inputValue = e.target.value;
+    const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, ''); // Sadece harf ve boşluk karakterlerini al
+    setFirstname(alphabeticValue.slice(0,25));
+
   const dispatch = useDispatch();
 
   const Userinfo = {
@@ -38,7 +43,7 @@ const RegisterScreen = () => {
   const handleFullnameChange = (e) => {
     const inputValue = e.target.value;
     const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, ''); // Sadece harf ve boşluk karakterlerini al
-    setfullname(alphabeticValue);
+    setfullname(alphabeticValue.slice(0,25));
   };
 
   const handlePhoneChange = (e) => {
@@ -99,6 +104,7 @@ const RegisterScreen = () => {
     }),
   };
   const navigate = useNavigate();
+  
   return (
     <>
       <div className='absolute mt-[89px]  top-0 left-0 w-full h-screen backdrop-blur-sm bg-black/30'>
