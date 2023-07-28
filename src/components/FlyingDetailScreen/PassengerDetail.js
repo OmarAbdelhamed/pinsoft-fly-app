@@ -2,6 +2,21 @@ import React, { useState } from 'react';
 
 const PassengerDetail = () => {
   const [KimlikType, setKimlikType] = useState('Tc Kimlik No');
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+
+  const handleNameChange = (e) => {
+    const inputValue = e.target.value;
+    const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
+    setName(alphabeticValue.slice(0,25))
+  }
+
+  const handleSurnameChange = (e) => {
+    const inputValue = e.target.value;
+    const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
+    setSurname(alphabeticValue.slice(0,25))
+  }
+
 
   const handleKimlikInput = (e) => {
     if (e.target.checked === true) {
@@ -37,6 +52,8 @@ const PassengerDetail = () => {
               <input
                 type='text'
                 placeholder='Name'
+                value={name}
+                onChange={handleNameChange}
                 className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border rounded border-opacity-50 outline-none focus:border-slate-400 placeholder-gray-300 placeholder-opacity-0 transition duration-200'
               />
               <span className='text-2xl  text-black text-opacity-50 bg-white absolute left-2 top-1 px-1 transition duration-200 input-text'>
@@ -49,6 +66,8 @@ const PassengerDetail = () => {
               <input
                 type='text'
                 placeholder='Surname'
+                value={surname}
+                onChange={handleSurnameChange}
                 className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border rounded border-opacity-50 outline-none focus:border-slate-400 placeholder-gray-300 placeholder-opacity-0 transition duration-200'
               />
               <span className='text-2xl  text-black text-opacity-50 bg-white absolute left-2 top-1 px-1 transition duration-200 input-text'>
