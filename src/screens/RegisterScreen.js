@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 import { AnimatePresence } from 'framer-motion';
-import { useDispatch } from 'react-redux';
-import { addSelectedUserData } from '../app/flyDataSlice';
 import Select from 'react-select';
 
 const RegisterScreen = () => {
@@ -15,12 +13,11 @@ const RegisterScreen = () => {
   const [gender, setGender] = useState('');
   const [error, setError] = useState('');
 
-  const handleFirstnameChange = (e) => {
+  const handleFullnameChange = (e) => {
     const inputValue = e.target.value;
     const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, ''); // Sadece harf ve boşluk karakterlerini al
-    setFirstname(alphabeticValue.slice(0,25));
-
-  const dispatch = useDispatch();
+    setfullname(alphabeticValue.slice(0, 25));
+  };
 
   const Userinfo = {
     fullname,
@@ -36,15 +33,7 @@ const RegisterScreen = () => {
     { value: 'Female', label: 'Female' },
   ];
 
-  const handleSub = () => {
-    dispatch(addSelectedUserData(Userinfo));
-  };
-
-  const handleFullnameChange = (e) => {
-    const inputValue = e.target.value;
-    const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, ''); // Sadece harf ve boşluk karakterlerini al
-    setfullname(alphabeticValue.slice(0,25));
-  };
+  const navigate = useNavigate();
 
   const handlePhoneChange = (e) => {
     const inputValue = e.target.value;
@@ -103,8 +92,7 @@ const RegisterScreen = () => {
       minWidth: 255,
     }),
   };
-  const navigate = useNavigate();
-  
+
   return (
     <>
       <div className='absolute mt-[89px]  top-0 left-0 w-full h-screen backdrop-blur-sm bg-black/30'>
@@ -223,7 +211,6 @@ const RegisterScreen = () => {
                     <button
                       type='submit'
                       onClick={(e) => {
-                        handleSub();
                         handleSubmit(e);
                       }}
                       className='w-full px-4 py-2  bg-primary-color text-white rounded-lg  hover:scale-[105%] hover:bg-primary-color-light'
