@@ -40,7 +40,6 @@ export default function LoginScreen() {
                           type='email'
                           placeholder='Email'
                           onChange={emailHandler}
-                          require
                           className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border-2 rounded-lg border-opacity-50 outline-none focus:border-none placeholder-gray-300 placeholder-opacity-0 transition duration-200'
                         />
                         <span className='text-2xl cursor-text  text-black text-opacity-50 bg-transparent absolute left-2 top-1 px-1 transition duration-200 input-text'>
@@ -53,7 +52,6 @@ export default function LoginScreen() {
                         <input
                           type='Password'
                           placeholder='Password'
-                          require
                           onChange={passwordHandler}
                           className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border-2 rounded-lg border-opacity-50 outline-none focus:border-none placeholder-gray-300 placeholder-opacity-0 transition duration-200'
                         />

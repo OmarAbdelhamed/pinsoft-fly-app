@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const initialState = {
   departureLegs: [], // buraya json web servara yüklenen datamız gelecek.
@@ -7,24 +7,25 @@ const initialState = {
   ports: [],
   selectedDepFlight: {},
   selectedRetFlight: {},
+  selectedUserData: {},
 };
 
-export const getDepartureLegs = createAsyncThunk("getDepartures", async () => {
-  const { data } = await axios.get("http://localhost:8000/departureLegs");
+export const getDepartureLegs = createAsyncThunk('getDepartures', async () => {
+  const { data } = await axios.get('http://localhost:8000/departureLegs');
   return data;
 });
-export const getReturnLegs = createAsyncThunk("getReturns", async () => {
-  const { data } = await axios.get("http://localhost:8000/returnLegs");
+export const getReturnLegs = createAsyncThunk('getReturns', async () => {
+  const { data } = await axios.get('http://localhost:8000/returnLegs');
   return data;
 });
 
-export const getPorts = createAsyncThunk("getPorts", async () => {
-  const { data } = await axios.get("http://localhost:8001/ports");
+export const getPorts = createAsyncThunk('getPorts', async () => {
+  const { data } = await axios.get('http://localhost:8001/ports');
   return data;
 });
 
 export const flyDataSlice = createSlice({
-  name: "flydata",
+  name: 'flydata',
   initialState,
   reducers: {
     addSelectedDepFlight: (state, action) => {
@@ -32,6 +33,9 @@ export const flyDataSlice = createSlice({
     },
     addSelectedRetFlight: (state, action) => {
       state.selectedRetFlight = action.payload;
+    },
+    addSelectedUserData: (state, action) => {
+      state.selectedUserData = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -48,7 +52,12 @@ export const flyDataSlice = createSlice({
   },
 });
 
-export const { addSelectedDepFlight, addSelectedRetFlight } =
-  flyDataSlice.actions;
+
+
+export const {
+  addSelectedDepFlight,
+  addSelectedRetFlight,
+  addSelectedUserData,
+} = flyDataSlice.actions;
 
 export default flyDataSlice.reducer;

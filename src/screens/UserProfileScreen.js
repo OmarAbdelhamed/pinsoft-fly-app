@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { MdSupervisedUserCircle } from 'react-icons/md';
-
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 const UserProfile = () => {
+  const selectedUserData = useSelector((state) => state.data.selectedUserData);
+  console.log(selectedUserData);
+
   const [isEditing, setIsEditing] = useState({
     contactInfo: false,
     membershipInfo: false,
   });
 
   const [contactInfo, setContactInfo] = useState({
-    fullName: 'John Doe',
+    fullName: 'p',
     phoneNumber: '123-456-7890',
     email: 'john@example.com',
   });
@@ -88,7 +91,7 @@ const UserProfile = () => {
     },
     {
       name: 'phoneNumber',
-      label: 'Cep Telefonu',
+      label: 'Phone Number',
       type: 'text',
       value: contactInfo.phoneNumber,
       setValue: (value) =>
@@ -96,7 +99,7 @@ const UserProfile = () => {
     },
     {
       name: 'email',
-      label: 'Mail',
+      label: 'Email',
       type: 'email',
       value: contactInfo.email,
       setValue: (value) => setContactInfo({ ...contactInfo, email: value }),
@@ -106,7 +109,7 @@ const UserProfile = () => {
   const PersonalInfoFields = [
     {
       name: 'gender',
-      label: 'Cinsiyet',
+      label: 'Gender',
       type: 'text',
       value: membershipInfo.gender,
       setValue: (value) =>
@@ -114,39 +117,31 @@ const UserProfile = () => {
     },
     {
       name: 'birthDate',
-      label: 'Doğum Tarihi',
+      label: 'BirthDate',
       type: 'date',
       value: membershipInfo.birthDate,
       setValue: (value) =>
         setMembershipInfo({ ...membershipInfo, birthDate: value }),
     },
     {
-      name: 'nationality',
-      label: 'Uyruk',
-      type: 'text',
-      value: membershipInfo.nationality,
-      setValue: (value) =>
-        setMembershipInfo({ ...membershipInfo, nationality: value }),
-    },
-    {
       name: 'idNumber',
-      label: 'T.C. Kimlik No',
+      label: 'T.C. ID No',
       type: 'text',
       value: membershipInfo.idNumber,
       setValue: (value) =>
         setMembershipInfo({ ...membershipInfo, idNumber: value }),
     },
     {
-      name: 'region',
-      label: 'Ülke/Bölge',
+      name: 'nationality',
+      label: 'Nationality',
       type: 'text',
-      value: membershipInfo.region,
+      value: membershipInfo.nationality,
       setValue: (value) =>
-        setMembershipInfo({ ...membershipInfo, region: value }),
+        setMembershipInfo({ ...membershipInfo, nationality: value }),
     },
     {
       name: 'city',
-      label: 'Şehir',
+      label: 'City',
       type: 'text',
       value: membershipInfo.city,
       setValue: (value) =>

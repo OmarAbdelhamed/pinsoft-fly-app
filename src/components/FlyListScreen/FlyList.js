@@ -1,6 +1,6 @@
-import { useState } from 'react';
+
 import { SiChinasouthernairlines } from 'react-icons/si';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   addSelectedDepFlight,
   addSelectedRetFlight,

@@ -1,13 +1,12 @@
 import React from 'react';
 import { SiChinasouthernairlines } from 'react-icons/si';
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import {  useSelector } from 'react-redux/es/hooks/useSelector';
 
 const FlyInformation = () => {
   const selectedFlight = useSelector((state) => state.data.selectedDepFlight);
   const selectedRetFlight = useSelector(
     (state) => state.data.selectedRetFlight
   );
-  console.log(Object.values(selectedRetFlight).length === 0);
   return (
     <>
       <div className='border p-10 relative shadow-xl bg-white rounded-lg h-auto max-w-[1200px] flex flex-col justify-center items-center'>
