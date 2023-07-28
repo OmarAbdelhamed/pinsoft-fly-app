@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ContactDetail = () => {
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e) => {
+    const inputValue = e.target.value;
+    const numericValue = inputValue.replace(/\D/g, ''); 
+    const formattedValue = numericValue.replace(
+      /(\d{1,2})(\d{1,3})(\d{1,3})(\d{1,2})(\d{1,2})/,
+      '+$1 $2 $3 $4 $5'
+    );
+    setPhone(formattedValue.slice(0, 17));
+  }
+
   return (
     <div className='border p-10 relative shadow-xl bg-white rounded-lg h-auto max-w-[1200px] flex flex-col justify-center items-center'>
       <div className='p-14 rounded-lg'>
@@ -13,6 +26,8 @@ const ContactDetail = () => {
               <input
                 type='email'
                 placeholder='Email'
+                onChange={setEmail}
+                value={email}
                 className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border-2 rounded-lg border-opacity-50 outline-none focus:border-primary-color-dark placeholder-gray-300 placeholder-opacity-0 transition duration-200'
               />
               <span className='text-2xl cursor-text  text-black text-opacity-50 bg-transparent absolute left-2 top-1 px-1 transition duration-200 input-text'>
@@ -25,6 +40,8 @@ const ContactDetail = () => {
               <input
                 type='tel'
                 placeholder='Phone Number'
+                onChange={handlePhoneChange}
+                value={phone}
                 className='  w-[255px] h-[44px] text-[20px] p-2 text-slate-600 border-slate-400 border-2 rounded-lg border-opacity-50 outline-none focus:border-primary-color-dark placeholder-gray-300 placeholder-opacity-0 transition duration-200'
               />
               <span className='text-2xl cursor-text  text-black text-opacity-50 bg-transparent absolute left-2 top-1 px-1 transition duration-200 input-text'>
