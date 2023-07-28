@@ -1,11 +1,17 @@
 import React from "react";
 import planeIcon from "../../assets/img/TicketAirplane.png";
 import "@fontsource/vt323";
+import { useSelector } from "react-redux";
 
 const Ticket = (prop) => {
   const leg = prop.leg;
   const depTime = leg.depTime;
   const arrTime = leg.arrTime;
+
+  const passengerDetail = useSelector(
+    (state) => state.detailData.passengerDetail
+  );
+  console.log("passengerdteial: ", passengerDetail);
 
   let sure = "";
   if (depTime !== undefined && arrTime !== undefined) {
@@ -56,7 +62,7 @@ const Ticket = (prop) => {
               <div className="grid grid-cols-4 sm:pl-4 md:pl-20 grid-rows-2 mt-3 font-ticket   sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]">
                 <div className="passenger-name flex flex-col  ">
                   <span className="font-bold ">Yolcu Adı:</span>
-                  <span>MELİHCAN ŞİMŞEK</span>
+                  <span>{passengerDetail.name}</span>
                 </div>
                 <div className="passenger-type flex flex-col ">
                   <span className="font-bold">Yolcu Tipi:</span>
