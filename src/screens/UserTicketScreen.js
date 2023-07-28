@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {
+    MdClose,
     MdArrowForwardIos
   } from 'react-icons/md';
 import Ticket from '../components/FlyTicket/Ticket';
@@ -20,7 +21,7 @@ const UserTicketScreen = () => {
       }, []);
     
       useEffect(() => {
-        let updateData = {};
+        const updateData = {};
         departureLegs.forEach(leg => {
             updateData[leg.flightId] = false;
         });
@@ -35,7 +36,22 @@ const UserTicketScreen = () => {
             return updateData;
           });
       };
+
+     const closeHandler = () =>{
+        setDataDictionary((prevData) => {
+            const updateData = {};
+            Object.keys(prevData).forEach((key) => {
+              updateData[key] = false;
+            });
+            return updateData;
+          });
+     } 
+
+    const checkDictionary = () => {
+        return Object.values(dataDictionary).some((value)=>value === true);
+    };
       
+   
   return (
     <div className='user-ticket-container mt-10' >
         <div className='user-ticket-header flex justify-center'>
@@ -70,6 +86,12 @@ const UserTicketScreen = () => {
                 </div>):null}
             </div>
             })}
+
+            {
+                checkDictionary() ? ( <div className='flex w-full relative justify-center items-center bottom-0 pt-6'>
+                <MdClose className='bg-slate-700 rounded-full text-white text-[4rem] p-4 animate-bounce cursor-pointer ' onClick={closeHandler}/>
+                </div>): null
+            }
         </div>
     </div>
   )
