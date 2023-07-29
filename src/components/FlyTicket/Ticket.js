@@ -62,7 +62,11 @@ const Ticket = (prop) => {
               <div className="grid grid-cols-4 sm:pl-4 md:pl-20 grid-rows-2 mt-3 font-ticket   sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]">
                 <div className="passenger-name flex flex-col  ">
                   <span className="font-bold ">Yolcu Adı:</span>
-                  <span>{passengerDetail.name}</span>
+                  <span>
+                    {passengerDetail.name.toUpperCase() +
+                      " " +
+                      passengerDetail.surname.toUpperCase()}
+                  </span>
                 </div>
                 <div className="passenger-type flex flex-col ">
                   <span className="font-bold">Yolcu Tipi:</span>
@@ -134,7 +138,9 @@ const Ticket = (prop) => {
                   Yolcu Adı:
                 </span>
                 <span className=" sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem]">
-                  Melihcan Şimşek
+                  {passengerDetail.name.toUpperCase() +
+                    " " +
+                    passengerDetail.surname.toUpperCase()}
                 </span>
               </div>
               <div className="source flex flex-row">

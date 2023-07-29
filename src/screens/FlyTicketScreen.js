@@ -12,17 +12,24 @@ const FlyTicketScreen = () => {
     (state) => state.data.selectedRetFlight
   );
 
-  const paidTickets = [selectedDepFlight, selectedRetFlight];
+  console.log("dep: ", selectedDepFlight.airline);
+  console.log("ret: ", selectedRetFlight.airline);
+  let paidTickets = [];
+  if (selectedRetFlight.airline != undefined) {
+    paidTickets = [selectedDepFlight, selectedRetFlight];
+  } else {
+    paidTickets = [selectedDepFlight];
+  }
+
   console.log("paidtickets: ", paidTickets);
 
   return (
     <div>
       {paidTickets.map((leg, i) => {
-        return <Ticket key={i} leg={leg} />
-        ;
+        return <Ticket key={i} leg={leg} />;
       })}
       <div className="mt-20">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
