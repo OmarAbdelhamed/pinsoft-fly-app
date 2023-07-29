@@ -26,22 +26,26 @@ const HomeForm = () => {
   const departureLegs = useSelector((state) => state.data.departureLegs);
   const returnLegs = useSelector((state) => state.data.returnLegs);
 
-  const selectedDepFlight = useSelector(state => state.data.selectedDepFlight)
-  const selectedRetFlight = useSelector(state => state.data.selectedRetFlight)
+  const selectedDepFlight = useSelector(
+    (state) => state.data.selectedDepFlight
+  );
+  const selectedRetFlight = useSelector(
+    (state) => state.data.selectedRetFlight
+  );
 
   //passengers dropdown starts here
   const popupRef = useRef();
 
-  useEffect(()=>{
-    if(selectedDepFlight !== undefined){
-      setFilteredDepartureLegs([selectedDepFlight])
+  useEffect(() => {
+    if (selectedDepFlight !== undefined) {
+      setFilteredDepartureLegs([selectedDepFlight]);
     }
-  },[selectedDepFlight])
-  useEffect(()=>{
-    if(selectedRetFlight !== undefined){
-      setFilteredReturnLegs([selectedRetFlight])
+  }, [selectedDepFlight]);
+  useEffect(() => {
+    if (selectedRetFlight !== undefined) {
+      setFilteredReturnLegs([selectedRetFlight]);
     }
-  },[selectedRetFlight])
+  }, [selectedRetFlight]);
 
   const incrementCount = (type) => {
     if (type === 'adult') {
@@ -81,15 +85,15 @@ const HomeForm = () => {
 
   useEffect(() => {
     dispatch(getPorts());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getDepartureLegs());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getReturnLegs());
-  }, []);
+  }, [dispatch]);
 
   const customStyles = {
     control: (base) => ({
