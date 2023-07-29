@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import CreditCardForm from './CreditCardForm';
 import { useNavigate } from 'react-router';
@@ -7,19 +6,12 @@ import Footer from '../components/UI/footer';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 
 const PaymentScreen = () => {
-  const [cardNumber, setCardNumber] = useState('');
   const [iban, setIban] = useState('');
-  const [expiry, setExpiry] = useState('');
-  const [cvc, setCVC] = useState('');
   const [nameSurname, setNameSurname] = useState('');
   const [installments, setInstallments] = useState('');
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [paymentOption, setPaymentOption] = useState('');
   const [accountNumber, setAccountNumber] = useState('');
-
-  const handleCardNumberChange = (event) => {
-    setCardNumber(event.target.value);
-  };
 
   const handleIbanChange = (event) => {
     const inputValue = event.target.value;
@@ -45,14 +37,6 @@ const PaymentScreen = () => {
   };
   const navigate = useNavigate();
 
-  const handleExpiryChange = (event) => {
-    setExpiry(event.target.value);
-  };
-
-  const handleCVCChange = (event) => {
-    setCVC(event.target.value);
-  };
-
   const handleNameSurnameChange = (event) => {
     const inputValue = event.target.value;
     const alphabeticValue = inputValue.replace(/[^a-zA-ZğüşıöçĞÜŞİÖÇ\s]/g, '');
@@ -76,12 +60,6 @@ const PaymentScreen = () => {
     event.preventDefault();
     // Ödeme işlemi için gerekli adımları burada gerçekleştirin
     // Ödeme işlemi tamamlandığında kullanıcıyı bilgilendirin
-  };
-
-  const [selectedDate, setSelectedDate] = useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
   };
 
   return (

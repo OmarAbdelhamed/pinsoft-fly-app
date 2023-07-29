@@ -10,7 +10,7 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import AnimatedComp from '../components/UI/AnimatedComp';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 import { AnimatePresence } from 'framer-motion';
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import {  useSelector } from 'react-redux/es/hooks/useSelector';
 import Footer from '../components/UI/footer';
 
 const FlyingDetailScreen = () => {

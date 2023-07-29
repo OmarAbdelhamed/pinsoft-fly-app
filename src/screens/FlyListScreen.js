@@ -1,6 +1,6 @@
 import FlyList from '../components/FlyListScreen/FlyList';
 import { useNavigate } from 'react-router';
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 export default function FlyListScreen(props) {
   const navigate = useNavigate();
