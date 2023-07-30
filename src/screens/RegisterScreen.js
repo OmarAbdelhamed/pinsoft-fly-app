@@ -28,6 +28,9 @@ const RegisterScreen = () => {
     gender,
   };
 
+
+  ;
+
   const GenderTypes = [
     { value: 'Male', label: 'Male' },
     { value: 'Female', label: 'Female' },
@@ -80,6 +83,8 @@ const RegisterScreen = () => {
       console.log({
         Userinfo,
       });
+
+      
 
       navigate('/login');
     }

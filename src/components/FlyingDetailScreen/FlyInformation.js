@@ -1,6 +1,6 @@
 import React from 'react';
 import { SiChinasouthernairlines } from 'react-icons/si';
-import {  useSelector } from 'react-redux/es/hooks/useSelector';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 const FlyInformation = () => {
   const selectedFlight = useSelector((state) => state.data.selectedDepFlight);
@@ -25,9 +25,9 @@ const FlyInformation = () => {
             <div className='flex flex-row justify-between items-center relative -left-[50px]'>
               <div className=' flex flex-col text-2xl gap-4 text-right'>
                 <span>{selectedFlight.depTime}</span>
-                <span>{selectedFlight.depPort}</span>
+                <span>{selectedFlight.depPort.code}</span>
                 <span className='-mt-4 text-lg text-slate-600'>
-                  {selectedFlight.depPort}
+                  {selectedFlight.depPort.code}
                 </span>
               </div>
               <div className='flex flex-col gap-1 mx-4'>
@@ -41,15 +41,18 @@ const FlyInformation = () => {
               </div>
               <div className=' flex flex-col text-2xl gap-4 text-left'>
                 <span>{selectedFlight.arrTime}</span>
-                <span>{selectedFlight.arrPort}</span>
+                <span>{selectedFlight.arrPort.code}</span>
                 <span className='-mt-4 text-lg text-slate-600'>
-                  {selectedFlight.arrPort}
+                  {selectedFlight.arrPort.code}
                 </span>
               </div>
             </div>
 
             <div className='text-3xl w-auto h-auto'>
-              {selectedFlight.passengerPrices[0].priceDetail.basePrice.amount}
+              {
+                selectedFlight.passengerPricesDto[0].priceDetailDto.basePriceDto
+                  .amount
+              }
               <span className='text-xl'>EUR</span>
             </div>
           </div>
@@ -67,9 +70,9 @@ const FlyInformation = () => {
               <div className='flex flex-row justify-between items-center relative -left-[50px]'>
                 <div className=' flex flex-col text-2xl gap-4 text-right'>
                   <span>{selectedRetFlight.depTime}</span>
-                  <span>{selectedRetFlight.depPort}</span>
+                  <span>{selectedRetFlight.depPort.code}</span>
                   <span className='-mt-4 text-lg text-slate-600'>
-                    {selectedRetFlight.depPort}
+                    {selectedRetFlight.depPort.code}
                   </span>
                 </div>
                 <div className='flex flex-col gap-1 mx-4'>
@@ -83,17 +86,17 @@ const FlyInformation = () => {
                 </div>
                 <div className=' flex flex-col text-2xl gap-4 text-left'>
                   <span>{selectedRetFlight.arrTime}</span>
-                  <span>{selectedRetFlight.arrPort}</span>
+                  <span>{selectedRetFlight.arrPort.code}</span>
                   <span className='-mt-4 text-lg text-slate-600'>
-                    {selectedRetFlight.arrPort}
+                    {selectedRetFlight.arrPort.code}
                   </span>
                 </div>
               </div>
 
               <div className='text-3xl w-auto h-auto'>
                 {
-                  selectedRetFlight.passengerPrices[0].priceDetail.basePrice
-                    .amount
+                  selectedRetFlight.passengerPricesDto[0].priceDetailDto
+                    .basePriceDto.amount
                 }
                 <span className='text-xl'>EUR</span>
               </div>

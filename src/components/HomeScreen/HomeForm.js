@@ -148,8 +148,8 @@ const HomeForm = () => {
     } else {
       const filteredDepLegs = departureLegs.filter(
         (leg) =>
-          leg.depPort === selectedOptionFrom.value &&
-          leg.arrPort === selectedOptionTo.value &&
+          leg.depPort.code === selectedOptionFrom.value &&
+          leg.arrPort.code === selectedOptionTo.value &&
           leg.flightDate === selectedDate
       );
 
@@ -157,20 +157,21 @@ const HomeForm = () => {
         ticketType.value === 'One Way'
           ? returnLegs.filter(
               (leg) =>
-                leg.depPort === selectedOptionFrom.value &&
-                leg.arrPort === selectedOptionTo.value &&
+                leg.depPort.code === selectedOptionFrom.value &&
+                leg.arrPort.code === selectedOptionTo.value &&
                 leg.flightDate === selectedDate
             )
           : returnLegs.filter(
               (leg) =>
-                leg.arrPort === selectedOptionFrom.value &&
-                leg.depPort === selectedOptionTo.value &&
+                leg.arrPort.code === selectedOptionFrom.value &&
+                leg.depPort.code === selectedOptionTo.value &&
                 leg.flightDate === selectedReturnDate
             );
 
       setFilteredDepartureLegs(filteredDepLegs);
       setFilteredReturnLegs(filteredRetLegs);
-
+      console.log(filteredDepLegs);
+      console.log(filteredRetLegs);
       setIsSearch(true);
     }
   };

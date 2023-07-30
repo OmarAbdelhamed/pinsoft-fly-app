@@ -32,29 +32,29 @@ const PriceDetail = () => {
                   <td className='px-4 py-2'>1 Adults</td>
                   <td className='px-4 py-2'>
                     {
-                      selectedFlight.passengerPrices[0].priceDetail.basePrice
-                        .amount
+                      selectedFlight.passengerPricesDto[0].priceDetailDto
+                        .basePriceDto.amount
                     }
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
                     {
-                      selectedFlight.passengerPrices[0].priceDetail.totalTax
-                        .amount
+                      selectedFlight.passengerPricesDto[0].priceDetailDto
+                        .totalTaxDto.amount
                     }
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
                     {
-                      selectedFlight.passengerPrices[0].priceDetail.surcharge
-                        .amount
+                      selectedFlight.passengerPricesDto[0].priceDetailDto
+                        .surchargeDto.amount
                     }
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
                     {
-                      selectedFlight.passengerPrices[0].priceDetail.salesPrice
-                        .amount
+                      selectedFlight.passengerPricesDto[0].priceDetailDto
+                        .salesPriceDto.amount
                     }
                     <span>₺</span>
                   </td>
@@ -85,29 +85,29 @@ const PriceDetail = () => {
                       <td className='px-4 py-2'>1 Adults</td>
                       <td className='px-4 py-2'>
                         {
-                          selectedRetFlight.passengerPrices[0].priceDetail
-                            .basePrice.amount
+                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
+                            .basePriceDto.amount
                         }
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
                         {
-                          selectedRetFlight.passengerPrices[0].priceDetail
-                            .totalTax.amount
+                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
+                            .totalTaxDto.amount
                         }
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
                         {
-                          selectedRetFlight.passengerPrices[0].priceDetail
-                            .surcharge.amount
+                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
+                            .surchargeDto.amount
                         }
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
                         {
-                          selectedRetFlight.passengerPrices[0].priceDetail
-                            .salesPrice.amount
+                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
+                            .salesPriceDto.amount
                         }
                         <span>₺</span>
                       </td>

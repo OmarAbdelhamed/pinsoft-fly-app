@@ -7,20 +7,21 @@ const initialState = {
   ports: [],
   selectedDepFlight: {},
   selectedRetFlight: {},
-  selectedUserData: {},
+  selectedAdult: {},
+  selectedChild: {},
 };
 
 export const getDepartureLegs = createAsyncThunk('getDepartures', async () => {
-  const { data } = await axios.get('http://localhost:8000/departureLegs');
+  const { data } = await axios.get('http://localhost:8181/travels/departure');
   return data;
 });
 export const getReturnLegs = createAsyncThunk('getReturns', async () => {
-  const { data } = await axios.get('http://localhost:8000/returnLegs');
+  const { data } = await axios.get('http://localhost:8181/travels/return');
   return data;
 });
 
 export const getPorts = createAsyncThunk('getPorts', async () => {
-  const { data } = await axios.get('http://localhost:8001/ports');
+  const { data } = await axios.get('http://localhost:8181/air-ports');
   return data;
 });
 
@@ -34,8 +35,11 @@ export const flyDataSlice = createSlice({
     addSelectedRetFlight: (state, action) => {
       state.selectedRetFlight = action.payload;
     },
-    addSelectedUserData: (state, action) => {
-      state.selectedUserData = action.payload;
+    addSelectedAdult: (state, action) => {
+      state.selectedAdult = action.payload;
+    },
+    addSelectedChild: (state, action) => {
+      state.selectedChild = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -52,12 +56,11 @@ export const flyDataSlice = createSlice({
   },
 });
 
-
-
 export const {
   addSelectedDepFlight,
   addSelectedRetFlight,
-  addSelectedUserData,
+  addSelectedAdult,
+  addSelectedChild,
 } = flyDataSlice.actions;
 
 export default flyDataSlice.reducer;
