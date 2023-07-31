@@ -1,29 +1,64 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { MdSupervisedUserCircle } from 'react-icons/md';
-import { useSelector } from 'react-redux/es/hooks/useSelector';
+
 const UserProfile = () => {
-  const selectedUserData = useSelector((state) => state.data.selectedUserData);
-  console.log(selectedUserData);
+  const [userData, setUserData] = useState();
+  const loginData = JSON.parse(localStorage.getItem('login'));
+  const token = loginData ? loginData.token : null;
+  console.log(token);
+  console.log(userData);
+
+  useEffect(() => {
+    // Fetch user profile data on component mount
+    const fetchUserProfile = async () => {
+      try {
+        // Send the API request only if the token exists
+        if (token) {
+          const response = await axios.get('http://localhost:8181/users', {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+          setUserData(response.data);
+          console.log(response.data);
+        }
+      } catch (error) {
+        // Handle error here
+        console.error('Error fetching profile data:', error);
+      }
+    };
+
+    fetchUserProfile();
+  }, [token]);
 
   const [isEditing, setIsEditing] = useState({
     contactInfo: false,
     membershipInfo: false,
   });
 
-  const [contactInfo, setContactInfo] = useState({
-    fullName: 'p',
-    phoneNumber: '123-456-7890',
-    email: 'john@example.com',
-  });
+  const [contactInfo, setContactInfo] = useState({});
 
-  const [membershipInfo, setMembershipInfo] = useState({
-    gender: 'Male',
-    birthDate: '1990-01-01',
-    nationality: 'USA',
-    idNumber: '123456789',
-    region: 'West',
-    city: 'New York',
-  });
+  const [membershipInfo, setMembershipInfo] = useState({});
+
+  useEffect(() => {
+    if (userData) {
+      setContactInfo({
+        fullName: userData.fullName,
+        phoneNumber: userData.phone,
+        email: userData.email,
+      });
+
+      setMembershipInfo({
+        gender: userData.gender,
+        birthDate: userData.dateOfBirth,
+        nationality: userData.country,
+        idNumber: userData.indentificationNumber,
+        region: '',
+        city: '',
+      });
+    }
+  }, [userData]);
 
   const handleEdit = (section) => {
     setIsEditing({ ...isEditing, [section]: true });

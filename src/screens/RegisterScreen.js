@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 import { AnimatePresence } from 'framer-motion';
 import Select from 'react-select';
+import axios from 'axios';
 
 const RegisterScreen = () => {
   const [fullname, setfullname] = useState('');
@@ -11,7 +12,10 @@ const RegisterScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [gender, setGender] = useState('');
+  const [Date, setDate] = useState('');
   const [error, setError] = useState('');
+  const [KimlikNo, setKimlikNo] = useState('');
+  const [KimlikType, setKimlikType] = useState('Tc Kimlik No');
 
   const handleFullnameChange = (e) => {
     const inputValue = e.target.value;
@@ -20,16 +24,15 @@ const RegisterScreen = () => {
   };
 
   const Userinfo = {
-    fullname,
-    phone,
-    country,
-    email,
-    password,
-    gender,
+    fullname: fullname,
+    phone: phone,
+    country: country,
+    email: email,
+    password: password,
+    gender: gender,
+    Date: Date,
   };
-
-
-  ;
+  console.log(Userinfo);
 
   const GenderTypes = [
     { value: 'Male', label: 'Male' },
@@ -49,15 +52,18 @@ const RegisterScreen = () => {
   };
 
   const handleAddressChange = (e) => {
-    setCountry(e.target.value);
+    setCountry(e.target.value.toString());
   };
 
   const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value.toString());
   };
 
   const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
+    setPassword(e.target.value.toString());
+  };
+  const handleDateChange = (e) => {
+    setDate(e.target.value.toString());
   };
 
   const handleGenderChange = (e) => {
@@ -83,8 +89,26 @@ const RegisterScreen = () => {
       console.log({
         Userinfo,
       });
+      axios
+        .post('http://localhost:8181/auth/register', {
+          fullName: fullname,
+          phone: phone,
+          country: country,
+          email: email,
+          password: password,
+          gender: gender.value,
+          dateOfBirth: Date,
+          indentificationNumber: KimlikNo,
+        })
 
-      
+        .then(
+          (response) => {
+            console.log(response);
+          },
+          (error) => {
+            console.log(error);
+          }
+        );
 
       navigate('/login');
     }
@@ -96,6 +120,18 @@ const RegisterScreen = () => {
       height: 43,
       minWidth: 255,
     }),
+  };
+
+  const handleKimlikInput = (e) => {
+    if (e.target.checked === true) {
+      setKimlikType('Passport No');
+    } else {
+      setKimlikType('Tc Kimlik No');
+    }
+  };
+
+  const handlekimlikChange = (e) => {
+    setKimlikNo(e.target.value);
   };
 
   return (
@@ -154,12 +190,37 @@ const RegisterScreen = () => {
                         className='w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
                       />
                     </div>
+                    <div className=''>
+                      <label className='block font-bold mb-2'>
+                        {KimlikType}:
+                      </label>
+                      <input
+                        type='text'
+                        inputMode='numeric'
+                        value={KimlikNo}
+                        onChange={handlekimlikChange}
+                        placeholder='Your ID number'
+                        className='  w-full font-normal px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
+                      />
+                    </div>
+                    <div className='mb-4 mr-6'>
+                      <input
+                        type='checkbox'
+                        name=''
+                        id=''
+                        className='mr-2'
+                        onChange={(e) => {
+                          handleKimlikInput(e);
+                        }}
+                      />
+                      <label htmlFor=''>Im not a Turkish citizen</label>
+                    </div>
                     <div className='mb-4'>
                       <label
                         htmlFor='trip'
                         className='font-Headlines text-gray-700'
                       >
-                        Trip Type:
+                        Gender:
                         <Select
                           options={GenderTypes}
                           id='trip'
@@ -181,6 +242,7 @@ const RegisterScreen = () => {
                         type='date'
                         name='date'
                         id='date'
+                        onChange={handleDateChange}
                         className='w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-300'
                       />
                     </div>

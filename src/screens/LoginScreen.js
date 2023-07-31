@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import AnimatedRoute from '../components/UI/AnimatedRoute';
 import { Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import axios from 'axios';
 
 export default function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
 
   const navigate = useNavigate();
 
@@ -18,8 +20,33 @@ export default function LoginScreen() {
   }
 
   const homeHandler = () => {
-    navigate('/home');
+    axios
+      .post('http://localhost:8181/auth/login', {
+        email: email,
+        password: password,
+      })
+
+      .then(
+        (response) => {
+          console.log(response);
+          setToken(response.data.token);
+          localStorage.setItem(
+            'login',
+            JSON.stringify({
+              login: true,
+              token: response.data.token,
+            })
+          );
+          navigate('/home');
+        },
+        (error) => {
+          console.log(error);
+          alert('make sure you entered a right parameters');
+        }
+      );
   };
+
+  console.log(token);
 
   return (
     <>

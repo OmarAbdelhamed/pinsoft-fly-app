@@ -6,12 +6,14 @@ import {
   MdAirplaneTicket,
   MdSupervisedUserCircle,
 } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Header = () => {
   const [top, setTop] = useState(true);
-
   const [open, setOpen] = React.useState(false);
 
+  const navigate = useNavigate();
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -25,6 +27,29 @@ const Header = () => {
       });
     });
   });
+
+  const HandleProfileClick = () => {
+    // Retrieve the JWT from localStorage (replace 'token' with the actual key used to store the JWT)
+    const loginData = JSON.parse(localStorage.getItem('login'));
+    const token = loginData ? loginData.token : null;
+    console.log(token);
+
+    // Include the JWT in the request headers
+    axios
+      .get('http://localhost:8181/users', {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        navigate('/profile');
+      })
+      .catch((error) => {
+        // Handle error here
+        console.error('Error fetching profile data:', error);
+      });
+  };
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -76,12 +101,13 @@ const Header = () => {
             {open ? (
               <ul className='menu  text-left bg-white cursor-pointer rounded-lg border w-auto p-2 '>
                 <li className='menu-item  hover:bg-[#23265f] hover:text-white m-1 rounded-lg'>
-                  <a href='/profile'>
-                    <div className='flex flex-row items-center gap-1 px-2 py-2'>
-                      <MdSupervisedUserCircle className='text-xl' />
-                      <span>Profile</span>
-                    </div>
-                  </a>
+                  <div
+                    className='flex flex-row items-center gap-1 px-2 py-2'
+                    onClick={HandleProfileClick}
+                  >
+                    <MdSupervisedUserCircle className='text-xl' />
+                    <span>Profile</span>
+                  </div>
                 </li>
 
                 <hr className='' />
