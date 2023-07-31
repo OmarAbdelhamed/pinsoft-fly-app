@@ -36,9 +36,9 @@ const HomeScreen = () => {
             id='book'
             className=' lg:px-[100px] relative min-h-[920px] flex flex-col items-center justify-center gap-[140px]'
           >
-            <div className='flex flex-row items-center justify-center mt-10'>
+            <div className='flex flex-col md:flex-row items-center justify-center mt-10'>
               <GiLibertyWing className='text-[200px] drop-shadow-[1px_1px_1px_rgba(0,0,0,0.5)]  shadow-white rounded-3xl text-white' />
-              <h1 className=' text-center text-[4rem] mt-4 px-4 font-semibold leading-[60px] w-[500px] text-white font-Headlines  '>
+              <h1 className=' text-center   text-[3rem] md:text-[4rem] mt-4 px-4 font-semibold leading-[60px] md:w-[500px] text-white font-Headlines  '>
                 FLY to the place of your dreams
               </h1>
             </div>

@@ -177,11 +177,11 @@ const HomeForm = () => {
   };
   return (
     <>
-      <div className='bg-[#d9d9d9] w-[360px] rounded py-4 my-3 px-2  lg:w-auto mx-auto backdrop-blur-sm bg-white/30'>
-        <h2 className='text-5xl font-bold mb-4 text-center text-gray-100 font-Headlines'>
+      <div className='bg-[#d9d9d9] w-[360px] rounded py-4 my-3 px-2 h-auto w-auto mx-auto backdrop-blur-sm bg-white/30'>
+        <h2 className='md:text-5xl text-4xl font-bold mb-4 text-center text-gray-100 font-Headlines'>
           Search for Flights
         </h2>
-        <form className='grid grid-flow-row px-4 grid-cols-4 grid-rows-2 items-center lg:gap-6 max-w-auto mb-4 bg-transparent place-items-center  '>
+        <form className='grid grid-flow-row px-4 grid-cols-1 grid-rows-7 md:grid-cols-4 md:grid-rows-2 items-center gap-6 max-w-auto mb-4 bg-transparent place-items-center  '>
           <label htmlFor='trip' className='font-Headlines text-gray-700'>
             Trip Type:
             <Select
@@ -191,7 +191,7 @@ const HomeForm = () => {
               placeholder='Please select your trip type'
               value={ticketType}
               required
-              className=' row-start-1'
+              className=' '
               onChange={ticketTypeHandler}
               styles={customStyles}
             ></Select>
@@ -204,7 +204,7 @@ const HomeForm = () => {
               options={filteredOptionsFrom}
               placeholder='select your destination'
               value={selectedOptionFrom}
-              className='row-start-2'
+              className=''
               onChange={handleSelectFrom}
               isSearchable={true}
               styles={customStyles}
@@ -218,14 +218,14 @@ const HomeForm = () => {
               options={filteredOptionsTo}
               placeholder='select your destination'
               value={selectedOptionTo}
-              className='row-start-3 col-start-1'
+              className=''
               onChange={handleSelectTo}
               isSearchable={true}
               styles={customStyles}
             />
           </label>
 
-          <label htmlFor='date' className='font-Headlines text-gray-700'>
+          <label htmlFor='date' className='font-Headlines text-gray-700 flex flex-col '>
             Date:
             <input
               type='date'
@@ -235,7 +235,7 @@ const HomeForm = () => {
                 handleSelectedDate(event);
               }}
               required
-              className='border border-gray-300 rounded-md p-2 min-w-[257px]'
+              className=' border border-gray-300 rounded-md p-2 min-w-[255px]'
             />
           </label>
 
@@ -243,7 +243,7 @@ const HomeForm = () => {
             <>
               <label
                 htmlFor='returnDate'
-                className='font-Headlines ml-4 text-gray-700'
+                className='font-Headlines  text-gray-700 flex flex-col'
               >
                 Return Date:
                 <input
@@ -254,7 +254,7 @@ const HomeForm = () => {
                     handleSelectedReturnDate(event);
                   }}
                   required
-                  className='border border-gray-300 rounded-md p-2   min-w-[255px] '
+                  className=' border border-gray-300 rounded-md p-2   min-w-[255px] '
                 />
               </label>
             </>
@@ -262,7 +262,7 @@ const HomeForm = () => {
             <>
               <label
                 htmlFor='returnDate'
-                className='font-Headlines ml-4 text-gray-700'
+                className='font-Headlines  text-gray-700 flex flex-col '
               >
                 Return Date:
                 <input
@@ -278,10 +278,10 @@ const HomeForm = () => {
           )}
 
           <div>
-            <div className='mb-2'>
+            <div className=''>
               <label
                 htmlFor='total-count'
-                className='block text-sm font-medium text-gray-700 font-Headlines'
+                className='font-medium text-gray-700 font-Headlines '
               >
                 Passengers
               </label>
@@ -289,7 +289,7 @@ const HomeForm = () => {
                 id='total-count'
                 name='total-count'
                 type='text'
-                className='block w-full px-2 py-1 mt-1 text-base border border-gray-300 rounded-md cursor-pointer h-[43px] min-w-[255px]'
+                className=' block w-full px-2 py-1 mt-1 text-base border border-gray-300 rounded-md cursor-pointer h-[43px] min-w-[255px]'
                 value={totalCount}
                 readOnly
                 onClick={() => setShowPopup(!showPopup)}
@@ -362,14 +362,15 @@ const HomeForm = () => {
               )}
             </div>
           </div>
-
+          <div className='md:col-span-2 '>        
           <button
             type='button'
-            className='bg-primary-color hover:bg-primary-color-dark transition ease-linear  text-white p-2 rounded-full  min-w-[300px] row-start-2 col-start-3 col-end-5'
+            className='bg-primary-color hover:bg-primary-color-dark transition ease-linear  text-white p-2 rounded-full  min-w-[300px] mt-6 '
             onClick={handleSearchClick}
           >
             Search
           </button>
+          </div> 
         </form>
       </div>
       {showWarning && <WarningPopUp onClose={handleWarningClose} />}
