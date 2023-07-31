@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { MdClose, MdArrowForwardIos } from 'react-icons/md';
-import Ticket from '../components/FlyTicket/Ticket';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDepartureLegs } from '../../src/app/flyDataSlice.js';
 import MainHeader from '../components/UserTicketScreen/MainHeader';
+import UserTicket from '../components/UserTicketScreen/UserTicket';
 
 const UserTicketScreen = () => {
   const departureLegs = useSelector((state) => state.data.departureLegs);
@@ -81,7 +81,7 @@ const UserTicketScreen = () => {
                 </div>
                 {dataDictionary[leg.flightId] ? (
                   <div className='col-span-5 pb-3 '>
-                    <Ticket leg={leg} />
+                    <UserTicket leg={leg} />
                   </div>
                 ) : null}
               </div>

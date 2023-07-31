@@ -3,15 +3,12 @@ import planeIcon from '../../assets/img/TicketAirplane.png';
 import '@fontsource/vt323';
 import { useSelector } from 'react-redux';
 
-const Ticket = (prop) => {
+const UserTicket = (prop) => {
   const leg = prop.leg;
   const depTime = leg.depTime;
   const arrTime = leg.arrTime;
 
-  const passengerDetail = useSelector(
-    (state) => state.detailData.passengerDetail
-  );
-  console.log('passengerdteial: ', passengerDetail);
+
 
   let sure = '';
   if (depTime !== undefined && arrTime !== undefined) {
@@ -63,9 +60,9 @@ const Ticket = (prop) => {
                 <div className='passenger-name flex flex-col  '>
                   <span className='font-bold '>Yolcu Adı:</span>
                   <span>
-                    {passengerDetail.name.toUpperCase() +
+                    {/* {passengerDetail.name.toUpperCase() +
                       " " +
-                      passengerDetail.surname.toUpperCase()}
+                      passengerDetail.surname.toUpperCase()} */}
                   </span>
                 </div>
                 <div className='passenger-type flex flex-col '>
@@ -138,9 +135,9 @@ const Ticket = (prop) => {
                   Yolcu Adı:
                 </span>
                 <span className=' sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem]'>
-                  {passengerDetail.name.toUpperCase() +
+                  {/* {passengerDetail.name.toUpperCase() +
                     " " +
-                    passengerDetail.surname.toUpperCase()}
+                    passengerDetail.surname.toUpperCase()} */}
                 </span>
               </div>
               <div className='source flex flex-row'>
@@ -209,4 +206,4 @@ const Ticket = (prop) => {
   );
 };
 
-export default Ticket;
+export default UserTicket;
