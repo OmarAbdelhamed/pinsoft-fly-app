@@ -9,7 +9,6 @@ export const flyDetailSlice = createSlice({
   initialState,
   reducers: {
     setDetail: (state, action) => {
-      console.log("Handling action in reducer:", action);
       state.passengerDetail = action.payload;
     },
   },
