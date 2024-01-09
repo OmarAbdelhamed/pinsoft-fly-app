@@ -2,10 +2,10 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 const PriceDetail = () => {
-  const selectedFlight = useSelector((state) => state.data.selectedDepFlight);
+  /*const selectedFlight = useSelector((state) => state.data.selectedDepFlight);
   const selectedRetFlight = useSelector(
     (state) => state.data.selectedRetFlight
-  );
+  );*/
   return (
     <>
       <div className='border p-10 relative shadow-xl bg-white rounded-lg h-auto max-w-[1200px] flex flex-col justify-center items-center'>
@@ -31,31 +31,19 @@ const PriceDetail = () => {
                 <tr className='border-b border-gray-300'>
                   <td className='px-4 py-2'>1 Adults</td>
                   <td className='px-4 py-2'>
-                    {
-                      selectedFlight.passengerPricesDto[0].priceDetailDto
-                        .basePriceDto.amount
-                    }
+                   2134
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
-                    {
-                      selectedFlight.passengerPricesDto[0].priceDetailDto
-                        .totalTaxDto.amount
-                    }
+                    2134
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
-                    {
-                      selectedFlight.passengerPricesDto[0].priceDetailDto
-                        .surchargeDto.amount
-                    }
+                    2134
                     <span>₺</span>
                   </td>
                   <td className='px-4 py-2'>
-                    {
-                      selectedFlight.passengerPricesDto[0].priceDetailDto
-                        .salesPriceDto.amount
-                    }
+                    2134
                     <span>₺</span>
                   </td>
                 </tr>
@@ -63,7 +51,6 @@ const PriceDetail = () => {
             </table>
           </div>
         </div>
-        {(Object.values(selectedRetFlight).length !== 0 && (
           <>
             <div className='flex flex-col mt-[10px]'>
               <h2 className='text-xl font-semibold mb-4 text-center font-Headlines'>
@@ -84,31 +71,19 @@ const PriceDetail = () => {
                     <tr className='border-b border-gray-300'>
                       <td className='px-4 py-2'>1 Adults</td>
                       <td className='px-4 py-2'>
-                        {
-                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
-                            .basePriceDto.amount
-                        }
+                       2134
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
-                        {
-                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
-                            .totalTaxDto.amount
-                        }
+                        2134
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
-                        {
-                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
-                            .surchargeDto.amount
-                        }
+                        2134
                         <span>₺</span>
                       </td>
                       <td className='px-4 py-2'>
-                        {
-                          selectedRetFlight.passengerPricesDto[0].priceDetailDto
-                            .salesPriceDto.amount
-                        }
+                        2134
                         <span>₺</span>
                       </td>
                     </tr>
@@ -117,11 +92,6 @@ const PriceDetail = () => {
               </div>
             </div>
           </>
-        )) || (
-          <h1 className='text-xl font-bold mt-10  text-center text-slate-800 font-Headlines'>
-            You did not select a return Ticket
-          </h1>
-        )}
       </div>
     </>
   );
