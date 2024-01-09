@@ -20,30 +20,31 @@ export default function LoginScreen() {
   }
 
   const homeHandler = () => {
-    axios
-      .post('http://localhost:8181/auth/login', {
-        email: email,
-        password: password,
-      })
+    //axios
+    //  .post('http://localhost:8181/auth/login', {
+    //    email: email,
+    //    password: password,
+    //  })
 
-      .then(
-        (response) => {
-          console.log(response);
-          setToken(response.data.token);
-          localStorage.setItem(
-            'login',
-            JSON.stringify({
-              login: true,
-              token: response.data.token,
-            })
-          );
-          navigate('/home');
-        },
-        (error) => {
-          console.log(error);
-          alert('make sure you entered a right parameters');
-        }
-      );
+    //  .then(
+    //    (response) => {
+    //      console.log(response);
+    //     setToken(response.data.token);
+    //     localStorage.setItem(
+    //       'login',
+    //       JSON.stringify({
+    //         login: true,
+    //        token: response.data.token,
+     //       })
+     //     );
+     //     navigate('/home');
+     //   },
+     //   (error) => {
+     //     console.log(error);
+     //     alert('make sure you entered a right parameters');
+     //   }
+    //  );
+    navigate('/home');
   };
 
   console.log(token);
