@@ -3,8 +3,8 @@ import planeIcon from '../../assets/img/TicketAirplane.png';
 import '@fontsource/vt323';
 import { useSelector } from 'react-redux';
 
-/*const Ticket = (prop) => {
-  const leg = prop.leg;
+const Ticket = (prop) => {
+ /* const leg = prop.leg;
   const depTime = 15:30;
   const arrTime = 15:30;*/
 
