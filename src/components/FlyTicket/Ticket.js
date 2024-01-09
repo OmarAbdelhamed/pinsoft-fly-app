@@ -3,12 +3,12 @@ import planeIcon from '../../assets/img/TicketAirplane.png';
 import '@fontsource/vt323';
 import { useSelector } from 'react-redux';
 
-const Ticket = (prop) => {
+/*const Ticket = (prop) => {
   const leg = prop.leg;
   const depTime = 15:30;
-  const arrTime = 15:30;
+  const arrTime = 15:30;*/
 
-  const passengerDetail = useSelector(
+  /*const passengerDetail = useSelector(
     (state) => state.detailData.passengerDetail
   );
   console.log('passengerdteial: ', passengerDetail);
@@ -31,7 +31,7 @@ const Ticket = (prop) => {
     sure = `${farkSaat} sa ${farkDakika} dk`;
   } else {
     sure = '';
-  }
+  }*/
 
   return (
     <div>
