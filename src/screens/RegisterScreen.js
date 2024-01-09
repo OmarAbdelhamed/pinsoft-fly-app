@@ -77,8 +77,8 @@ const RegisterScreen = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!fullname || !phone || !country || !email || !password) {
+navigate('/login');
+   /* if (!fullname || !phone || !country || !email || !password) {
       setError('Please fill out all fields.');
     } else if (!validatePassword(password)) {
       setError(
@@ -89,7 +89,7 @@ const RegisterScreen = () => {
       console.log({
         Userinfo,
       });
-      /* axios
+       axios
         .post('http://localhost:8181/auth/register', {
           fullName: fullname,
           phone: phone,
@@ -110,7 +110,7 @@ const RegisterScreen = () => {
           }
         ); */
 
-      navigate('/login');
+      
     //}
   };
 
