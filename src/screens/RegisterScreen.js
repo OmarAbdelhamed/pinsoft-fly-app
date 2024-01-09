@@ -89,7 +89,7 @@ const RegisterScreen = () => {
       console.log({
         Userinfo,
       });
-      axios
+      /* axios
         .post('http://localhost:8181/auth/register', {
           fullName: fullname,
           phone: phone,
@@ -108,10 +108,10 @@ const RegisterScreen = () => {
           (error) => {
             console.log(error);
           }
-        );
+        ); */
 
       navigate('/login');
-    }
+    //}
   };
 
   const customStyles = {
