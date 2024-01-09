@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 
 const Ticket = (prop) => {
   const leg = prop.leg;
-  const depTime = leg.depTime;
-  const arrTime = leg.arrTime;
+  const depTime = 15:30;
+  const arrTime = 15:30;
 
   const passengerDetail = useSelector(
     (state) => state.detailData.passengerDetail
@@ -45,7 +45,7 @@ const Ticket = (prop) => {
                 className='w-[50px] h-[50px]  md:ml-20 '
               ></img>
               <span className='flex items-center font-bold   text-2xl text-white'>
-                {leg.airline}
+                turkish
               </span>
               <span className='flex items-center font-bold   text-2xl mr-4 text-white'>
                 Biniş Kartı
@@ -63,9 +63,7 @@ const Ticket = (prop) => {
                 <div className='passenger-name flex flex-col  '>
                   <span className='font-bold '>Yolcu Adı:</span>
                   <span>
-                    {passengerDetail.name.toUpperCase() +
-                      " " +
-                      passengerDetail.surname.toUpperCase()}
+                    omar abdelhamed
                   </span>
                 </div>
                 <div className='passenger-type flex flex-col '>
@@ -74,7 +72,7 @@ const Ticket = (prop) => {
                 </div>
                 <div className='tail-no flex flex-col '>
                   <span className='font-bold'>Kuyruk No:</span>
-                  <span>{leg.flightNo}</span>
+                  <span>2134</span>
                 </div>
                 <div className='insurance flex flex-col '>
                   <span className='font-bold'>Uçuş Sigortası:</span>
@@ -82,15 +80,15 @@ const Ticket = (prop) => {
                 </div>
                 <div className='source flex flex-col mt-2'>
                   <span className='font-bold'>Konum:</span>
-                  <span>{leg.depPort.code}</span>
+                  <span>2134</span>
                 </div>
                 <div className='destination flex flex-col mt-2'>
                   <span className='font-bold'>Hedef:</span>
-                  <span>{leg.arrPort.code}</span>
+                  <span>2134</span>
                 </div>
                 <div className='date flex flex-col mt-2'>
                   <span className='font-bold'>Tarih:</span>
-                  <span>{leg.flightDate}</span>
+                  <span>aug 15</span>
                 </div>
                 <div className='luggage flex flex-col mt-2'>
                   <span className='font-bold'>Bagaj:</span>
@@ -104,7 +102,7 @@ const Ticket = (prop) => {
                     Kalkış
                   </span>
                   <span className='sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]'>
-                    {leg.depTime}
+                    15:30
                   </span>
                   {/* <span className="sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]">
                     19 Temmuz, Çarşamba
@@ -115,7 +113,7 @@ const Ticket = (prop) => {
                     Süre
                   </span>
                   <span className='sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]'>
-                    {sure}
+                    4:00
                   </span>
                 </div>
                 <div className='land flex flex-col  text-center text-[#fa205a]'>
@@ -123,7 +121,7 @@ const Ticket = (prop) => {
                     Varış
                   </span>
                   <span className=' sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]'>
-                    {leg.arrTime}
+                    15:30
                   </span>
                   {/* <span className="sm:text-[1.1rem] md:text-[1.1rem] lg:text-[1.3rem]">
                     19 Temmuz, Çarşamba
@@ -138,9 +136,7 @@ const Ticket = (prop) => {
                   Yolcu Adı:
                 </span>
                 <span className=' sm:text-[1rem] md:text-[1.2rem] lg:text-[1.5rem]'>
-                  {passengerDetail.name.toUpperCase() +
-                    " " +
-                    passengerDetail.surname.toUpperCase()}
+                  omar abdelhamed
                 </span>
               </div>
               <div className='source flex flex-row'>
@@ -148,7 +144,7 @@ const Ticket = (prop) => {
                   Konum:{' '}
                 </span>
                 <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                  {leg.depPort.code}
+                  2134
                 </span>
               </div>
               <div className='destination flex flex-row '>
@@ -156,20 +152,20 @@ const Ticket = (prop) => {
                   Hedef:{' '}
                 </span>
                 <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                  {leg.arrPort.code}
+                  2134
                 </span>
               </div>
               <div className='grid grid-cols-2 grid-rows-3 mt-1'>
                 <div className='flex flex-col'>
                   <span className='font-bold text-[1rem]'>Kuyruk No:</span>
                   <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                    {leg.flightNo}
+                    2134
                   </span>
                 </div>
                 <div className='flex flex-col'>
                   <span className='font-bold text-[1rem]'>Tarih:</span>
                   <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                    {leg.flightDate}
+                    aug 15
                   </span>
                 </div>
                 <div className='flex flex-col'>
@@ -188,13 +184,13 @@ const Ticket = (prop) => {
                 <div className='flex flex-col'>
                   <span className='font-bold text-[1rem]'>Kalkış</span>
                   <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                    {leg.depTime}
+                    15:30
                   </span>
                 </div>
                 <div className='flex flex-col'>
                   <span className='font-bold text-[1rem]'>Varış</span>
                   <span className='sm:text-[1rem] md:text-[1.1rem] lg:text-[1.2rem]'>
-                    {leg.arrTime}
+                    15:30
                   </span>
                 </div>
               </div>
