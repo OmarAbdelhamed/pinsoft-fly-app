@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Select from 'react-select';
 import FlyListScreen from '../../screens/FlyListScreen';
 import WarningPopUp from './WarningPopUp';
+import { useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getPorts,
@@ -22,6 +23,8 @@ const HomeForm = () => {
   const [showWarning, setShowWarning] = useState(false);
   const [filteredDepartureLegs, setFilteredDepartureLegs] = useState([]);
   const [filteredReturnLegs, setFilteredReturnLegs] = useState([]);
+
+  const navigate = useNavigate();
 
   const departureLegs = useSelector((state) => state.data.departureLegs);
   const returnLegs = useSelector((state) => state.data.returnLegs);
@@ -143,7 +146,7 @@ const HomeForm = () => {
   };
 
   const handleSearchClick = () => {
-    if (!selectedOptionFrom || !selectedOptionTo || !selectedDate) {
+   /* if (!selectedOptionFrom || !selectedOptionTo || !selectedDate) {
       setShowWarning(true);
     } else {
       const filteredDepLegs = departureLegs.filter(
@@ -173,7 +176,8 @@ const HomeForm = () => {
       console.log(filteredDepLegs);
       console.log(filteredRetLegs);
       setIsSearch(true);
-    }
+    } */
+    navigate('/Details');
   };
   return (
     <>
